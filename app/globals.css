@@ -120,3 +120,128 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide the actual checkbox */
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  user-select: none;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.2s ease, width 0.2s ease;
+}
+
+/* Animate hamburger into an "X" when checked */
+.menu-toggle:checked + div .hamburger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle:checked + div .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle:checked + div .hamburger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile menu container (collapsed by default) */
+.mobile-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%; /* directly below the bar section */
+  z-index: 50; /* above page content */
+  overflow: hidden;
+
+  /* start hidden */
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+/* Dropdown panel styling */
+.mobile-menu-inner {
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(14, 11, 11, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  transform: translateY(-6px);
+  transition: transform 0.3s ease;
+}
+
+/* Links */
+.mobile-link {
+  display: block;
+  padding: 12px 14px;
+  color: #d1d5db; /* gray-300 */
+  font-size: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  position: relative;
+}
+.mobile-link:hover {
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    rgba(217, 70, 239, 0.08),
+    rgba(34, 211, 238, 0.08)
+  );
+}
+
+/* Gradient underline effect on mobile items */
+.mobile-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 8px;
+  height: 2px;
+  background: linear-gradient(90deg, #d946ef, #22d3ee);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.mobile-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Expand the mobile menu when checked */
+.menu-toggle:checked ~ .mobile-menu {
+  max-height: 80vh; /* large enough to overlay, but not the entire screen */
+  opacity: 1;
+}
+
+.menu-toggle:checked ~ .mobile-menu .mobile-menu-inner {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hamburger,
+  .mobile-menu,
+  .mobile-menu-inner,
+  .mobile-link,
+  .mobile-link::after {
+    transition: none !important;
+  }
+}
