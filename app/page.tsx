@@ -420,7 +420,7 @@ export const metadata: Metadata = {
     siteName: "Leeds AI Society",
     images: [
       {
-        url: `${process.env.url}/logo.png`,
+        url: `${process.env.url}/OpenGraph.jpg`,
         width: 1200,
         height: 630,
         alt: "Leeds AI Society",
@@ -434,7 +434,7 @@ export const metadata: Metadata = {
     title: "Leeds AI Society",
     description:
       "Workshops, panels, hackathons, and community for AI enthusiasts.",
-    images: [`${process.env.url}/logo.png`],
+    images: [`${process.env.url}/OpenGraph.jpg`],
   },
   robots: {
     index: true,
