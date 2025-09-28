@@ -48,9 +48,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0E0B0B] text-gray-200`}
       >
-        <div className="min-h-screen w-full bg-[#0E0B0B] text-gray-200 antialiased">
+        <div className="min-h-dvh w-full">
           <div className="p-6">
             {/* Top Nav */}
             <nav className="relative mx-auto max-w-5xl py-3">
