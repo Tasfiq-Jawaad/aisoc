@@ -284,7 +284,7 @@
 .border-gap {
   /* Variables */
   --gap-width: 1.1px; /* a bit wider than 1px border */
-  --gap-start: 56px; /* Tailwind bottom-14 */
+  --gap-start: 96px; /* Tailwind bottom-14 */
   --gap-height: 64px; /* Height of the tail */
 
   /* Two layers:
@@ -314,8 +314,8 @@
 @media (min-width: 64rem) {
   .border-gap {
     /* Position the subtracting strip on the right */
-    -webkit-mask-position: 0 0, right calc(100% - var(--gap-start));
-    mask-position: 0 0, right calc(100% - var(--gap-start));
+    -webkit-mask-position: 0 0, calc(100% + 1px) var(--gap-start);
+    mask-position: 0 0, calc(100% + 1px) var(--gap-start);
 
     -webkit-mask-size: 100% 100%, var(--gap-width) var(--gap-height);
     mask-size: 100% 100%, var(--gap-width) var(--gap-height);

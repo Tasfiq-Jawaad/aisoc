@@ -73,7 +73,7 @@ export default function LandingWireframeNeon() {
 
           <svg
             aria-hidden
-            className="pointer-events-none absolute -bottom-[63px] max-lg:left-1/2 max-lg:rotate-z-90 lg:bottom-14 lg:-right-[63px] transform -scale-x-100 lg:scale-x-100"
+            className="pointer-events-none absolute top-full max-lg:-translate-y-[1px] max-lg:left-1/2 max-lg:rotate-z-90 lg:top-24 lg:-right-[63.5px] transform -scale-x-100 lg:scale-x-100"
             width="64"
             height="64"
             viewBox="0 0 64 64"
