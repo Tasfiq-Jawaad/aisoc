@@ -110,7 +110,7 @@ export default function LandingWireframeNeon() {
         </h2>
         <p className="mt-5 text-base md:text-[20px] text-gray-300">
           We are the official student-led society for all things Artificial
-          Inteligence at the University of Leeds. Whether you're an expert,
+          Inteligence at the University of Leeds. Whether you&apos;re an expert,
           beginer or just curious about AI, this is the right place for you.
           Find out more about{" "}
           <Link
