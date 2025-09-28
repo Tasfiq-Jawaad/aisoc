@@ -100,7 +100,7 @@ export default function LandingWireframeNeon() {
               {/* Front */}
               <div className="absolute inset-0 [backface-visibility:hidden]">
                 <Image
-                  src="/mascot.png"
+                  src="/mascot.svg"
                   alt="Mascot of the Artificial Intelligence Society"
                   fill
                 />
@@ -108,7 +108,7 @@ export default function LandingWireframeNeon() {
               {/* Back */}
               <div className="absolute inset-0 rotate-y-180 [backface-visibility:hidden]">
                 <Image
-                  src={"/logo.png"}
+                  src={"/logo.svg"}
                   alt="Logo of the Artificial Intelligence Society"
                   fill
                 />
@@ -252,7 +252,7 @@ export default function LandingWireframeNeon() {
               <div className="flex items-center gap-3">
                 <div className="relative h-10 w-10 sm:h-14 sm:w-14">
                   <Image
-                    src="/logo.png"
+                    src="/logo.svg"
                     alt="AI Society Logo"
                     fill
                     className="object-contain"
