@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -64,13 +65,13 @@ export default function RootLayout({
 
               {/* Bar: brand + hamburger */}
               <div className="md:hidden flex items-center justify-between px-2 md:px-0">
-                <a
+                <Link
                   href="/"
                   className="text-lg font-semibold tracking-tight text-white"
                   aria-label="Home"
                 >
                   AI Society
-                </a>
+                </Link>
 
                 {/* Hamburger button (label controls the checkbox) */}
                 <label
@@ -88,14 +89,14 @@ export default function RootLayout({
               <div className="mt-2 hidden md:block">
                 <div className="flex flex-wrap items-center justify-center gap-6 text-lg md:text-xl">
                   {navLinks.map((item) => (
-                    <a
+                    <Link
                       key={item.displayName}
                       href={`/${item.url}`}
                       className="group relative px-1 text-gray-300 transition-colors hover:text-white"
                     >
                       {item.displayName}
                       <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-gradient-to-r from-red-500 to-red-900 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
