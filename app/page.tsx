@@ -219,6 +219,169 @@ export default function LandingWireframeNeon() {
           <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-0.5 w-24 [background:#eb5b6c80] blur-sm" />
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="relative mt-10 md:mt-16 border-t border-white/10 pt-8 md:pt-10">
+        {/* Background accents */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute left-1/4 top-0 h-28 w-28 sm:h-40 sm:w-40 rounded-full [background:#eb5b6c33] blur-[64px]" />
+          <div className="absolute right-1/5 bottom-0 h-32 w-32 sm:h-44 sm:w-44 rounded-full [background:#eb5b6c1a] blur-[72px]" />
+        </div>
+
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4">
+          <div className="grid grid-cols-1 gap-8 sm:gap-5 lg:grid-cols-4">
+            {/* Brand / About */}
+            <div className="md:col-span-2">
+              <div className="flex items-center gap-3">
+                <div className="relative h-10 w-10 sm:h-14 sm:w-14">
+                  <Image
+                    src="/logo.png"
+                    alt="AI Society Logo"
+                    fill
+                    className="object-contain"
+                    sizes="40px"
+                  />
+                </div>
+                <span className="text-white font-extrabold tracking-tight text-lg sm:text-xl">
+                  Artificial Intelligence Society
+                </span>
+              </div>
+
+              <p className="mt-3 sm:mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
+                Building a curious, collaborative, and creative community around
+                AI at the University of Leeds. From beginner workshops to
+                hackathons, panels, and socials—everyone is welcome.
+              </p>
+
+              {/* Socials: larger tap targets on mobile */}
+              <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-3">
+                {[
+                  { name: "X", href: "#" },
+                  { name: "Instagram", href: "#" },
+                  { name: "LinkedIn", href: "#" },
+                  { name: "Discord", href: "#" },
+                ].map((s, i) => (
+                  <Link
+                    key={i}
+                    href={s.href}
+                    aria-label={s.name}
+                    className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white transition"
+                  >
+                    <span className="text-sm font-semibold">{s.name[0]}</span>
+                    <span className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-white/5" />
+                    <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition [box-shadow:0_0_24px_0_#eb5b6c66]" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:col-span-2">
+              <div className="max-[430px]:col-span-2">
+                <h5 className="text-white font-semibold text-base sm:text-lg">
+                  Explore
+                </h5>
+                <ul className="mt-3 space-y-2 text-gray-400 text-sm sm:text-base">
+                  <li>
+                    <Link href="#" className="hover:text-white transition">
+                      Events
+                    </Link>
+                  </li>
+                  <li className="break-words">
+                    <Link href="#" className="hover:text-white transition">
+                      Leeds &lt;hack_ai_thon&gt;
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="hover:text-white transition">
+                      Projects
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="hover:text-white transition">
+                      Committee
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* todo: magic number needs to be removed after all links are added */}
+              <div className="max-[430px]:col-span-2">
+                <h5 className="text-white font-semibold text-base sm:text-lg">
+                  Contact
+                </h5>
+
+                {/* Other links */}
+                <ul className="mt-3 space-y-2 text-gray-400 text-sm sm:text-base">
+                  <li>
+                    <Link
+                      href="mailto:committee@leedsaisoc.co.uk"
+                      className="hover:text-white transition"
+                    >
+                      committee@leedsaisoc.co.uk
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="hover:text-white transition">
+                      Sponsor us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="hover:text-white transition">
+                      Join the society
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Newsletter */}
+              <div className="col-span-2">
+                <h5 className="text-white font-semibold text-base sm:text-lg">
+                  Stay in the loop
+                </h5>
+                <p className="mt-2 text-gray-400 text-sm sm:text-base">
+                  Get updates on events, workshops, and hackathons.
+                </p>
+                <form
+                  className="mt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-2"
+                  action="#"
+                  method="post"
+                >
+                  <div className="relative flex-1">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="you@leeds.ac.uk"
+                      aria-label="Email address"
+                      className="w-full rounded-xl border border-white/15 bg-white/5 px-3 sm:px-4 py-3 text-sm sm:text-base text-gray-100 placeholder-gray-400 outline-none transition focus:[border-color:#eb5b6c99] focus:ring-2 focus:[--ring-color:#eb5b6c33] focus:[box-shadow:0_0_0_3px_var(--ring-color)]"
+                      required
+                      inputMode="email"
+                      autoComplete="email"
+                    />
+                    <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/5" />
+                  </div>
+                  <button
+                    type="submit"
+                    className="rounded-xl [background:#eb5b6c] hover:[background:#ff6b7b] text-black font-semibold px-4 py-3 text-sm sm:text-base transition"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="mt-8 sm:mt-10 border-t border-white/10 pt-4 sm:pt-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 px-3 sm:px-4">
+              <p className="text-gray-500 text-xs sm:text-sm">
+                © {new Date().getFullYear()} Artificial Intelligence Society.
+                All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
