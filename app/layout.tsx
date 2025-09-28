@@ -105,13 +105,13 @@ export default function RootLayout({
               <div className="mobile-menu md:hidden">
                 <div className="mobile-menu-inner">
                   {navLinks.map((item) => (
-                    <a
+                    <Link
                       key={item.displayName}
                       href={`/${item.url}`}
                       className="mobile-link"
                     >
                       {item.displayName}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
