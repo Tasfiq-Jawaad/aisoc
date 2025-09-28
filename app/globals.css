@@ -248,6 +248,48 @@
   }
 }
 
+.scan-container {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 1px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scan-line {
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.scan-highlight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0%;
+  transform: translateX(-100%);
+  height: 2px;
+  width: 6rem;
+  border-radius: 9999px;
+  background: #eb5b6c;
+  filter: drop-shadow(0 0 6px #eb5b6c);
+  animation: scan 10s linear infinite;
+}
+
+/* Keyframes for the scanning animation */
+@keyframes scan {
+  0% {
+    left: 0%;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
+
 /* Creates a transparent gap on the border */
 .border-gap {
   /* Variables */
