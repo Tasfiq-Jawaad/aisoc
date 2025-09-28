@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -402,3 +403,41 @@ export default function LandingWireframeNeon() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Leeds Artificial Intelligence Society | University of Leeds",
+  description:
+    "Workshops, panels, hackathons, and community for AI enthusiasts at the University of Leeds.",
+  alternates: {
+    canonical: "https://leedsaisoc.co.uk/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://leedsaisoc.co.uk/",
+    title: "Leeds AI Society",
+    description:
+      "Your home for all things AI at the University of Leeds: events, workshops, hackathons.",
+    siteName: "Leeds AI Society",
+    images: [
+      {
+        url: "https://www.leedsaisoc.co.uk/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Leeds AI Society",
+      },
+    ],
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@LeedsAISoc",
+    title: "Leeds AI Society",
+    description:
+      "Workshops, panels, hackathons, and community for AI enthusiasts.",
+    images: ["https://www.leedsaisoc.co.uk/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
