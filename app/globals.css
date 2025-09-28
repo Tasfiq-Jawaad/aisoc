@@ -248,6 +248,48 @@
   }
 }
 
+/* Creates a transparent gap on the border */
+.border-gap {
+  /* Variables */
+  --gap-width: 1.1px; /* a bit wider than 1px border */
+  --gap-start: 56px; /* Tailwind bottom-14 */
+  --gap-height: 64px; /* Height of the tail */
+
+  /* Two layers:
+     1) Base mask covers the whole element (border-box) so borders can render.
+     2) Narrow vertical strip to subtract to create the gap.
+  */
+  -webkit-mask: linear-gradient(#000 0 0) border-box,
+    linear-gradient(#000 0 0) border-box;
+  mask: linear-gradient(#000 0 0) border-box,
+    linear-gradient(#000 0 0) border-box;
+
+  /* Subtract second mask from the first */
+  -webkit-mask-composite: xor; /* Safari/WebKit */
+  mask-composite: exclude; /* Spec/Chromium/Firefox */
+
+  /* Position the subtracting strip at the bottom */
+  -webkit-mask-position: 0 0, calc(50% + 32px) bottom; /* 32 is the half of tail's width */
+  mask-position: 0 0, calc(50% + 32px) bottom;
+
+  -webkit-mask-size: 100% 100%, var(--gap-height) var(--gap-width);
+  mask-size: 100% 100%, var(--gap-height) var(--gap-width);
+
+  -webkit-mask-repeat: no-repeat, no-repeat;
+  mask-repeat: no-repeat, no-repeat;
+}
+
+@media (min-width: 64rem) {
+  .border-gap {
+    /* Position the subtracting strip on the right */
+    -webkit-mask-position: 0 0, right calc(100% - var(--gap-start));
+    mask-position: 0 0, right calc(100% - var(--gap-start));
+
+    -webkit-mask-size: 100% 100%, var(--gap-width) var(--gap-height);
+    mask-size: 100% 100%, var(--gap-width) var(--gap-height);
+  }
+}
+
 /* Total cycle = 3s hold + 0.6s flip + 3s hold + 0.6s flip = 7.2s
    Using percentages for precise holds and quick flips */
 @keyframes flipHold180 {

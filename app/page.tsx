@@ -5,7 +5,7 @@ export default function LandingWireframeNeon() {
     <main className="p-2 xxs:p-4">
       <section className="relative mx-auto flex flex-col lg:flex-row max-lg:items-center justify-center items-stretch gap-16">
         <div className="relative max-w-5xl flex-1">
-          <div className="relative rounded-xl border border-white/10 bg-white/10 p-6 h-full">
+          <div className="relative rounded-xl border border-white/10 bg-white/10 p-6 border-gap h-full">
             <h1 className="text-2xl xxs:text-3xl xl:text-5xl font-extrabold tracking-tight text-white">
               Leeds Artificial Intelligence Society |
             </h1>
