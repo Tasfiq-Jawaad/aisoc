@@ -119,7 +119,8 @@ export default function LandingWireframeNeon() {
       </section>
 
       {/* Welcome Section */}
-      <section className="text-center max-w-4xl mx-auto my-[52px]">
+      <section className="relative text-center max-w-4xl mx-auto my-[52px]">
+        <div className="hero-glow translate-x-1/2" />
         <h2 className="text-lg xxs:text-2xl font-extrabold tracking-tight text-white">
           Welcome to the Artificial Intelligence Society of the University of
           Leeds
