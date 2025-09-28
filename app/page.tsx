@@ -26,6 +26,27 @@ export default function LandingWireframeNeon() {
               </div>
             </div>
           </div>
+
+          <svg
+            aria-hidden
+            className="pointer-events-none absolute -bottom-[63px] max-lg:left-1/2 max-lg:rotate-z-90 lg:bottom-14 lg:-right-[63px] transform -scale-x-100 lg:scale-x-100"
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+          >
+            <path
+              d="M0 64 L0 64 L0 0 L0 64 C32 64 48 50.6667 64 32 C32 32 24 32 0 0"
+              fill="rgba(255,255,255,0.10)"
+            />
+            <path
+              d="M0 0 C24 32 32 32 64 32 C48 50.6667 32 64 1.5 64"
+              fill="none"
+              stroke="rgba(255,255,255,0.12)"
+              strokeWidth={1.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
 
         {/* Mascot and logo */}
