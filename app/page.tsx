@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 export default function LandingWireframeNeon() {
   return (
     <main className="p-2 xxs:p-4">
-      <section className="relative mx-auto">
-        <div className="relative max-w-5xl mx-auto">
-          <div className="relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <h1 className="text-2xl xxs:text-3xl font-extrabold tracking-tight text-white">
+      <section className="relative mx-auto flex flex-col lg:flex-row max-lg:items-center justify-center items-stretch gap-16">
+        <div className="relative max-w-5xl flex-1">
+          <div className="relative rounded-xl border border-white/10 bg-white/10 p-6 h-full">
+            <h1 className="text-2xl xxs:text-3xl xl:text-5xl font-extrabold tracking-tight text-white">
               Leeds Artificial Intelligence Society |
             </h1>
             <p className="mt-5 text-lg text-gray-400">
@@ -21,6 +23,22 @@ export default function LandingWireframeNeon() {
                   className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-gray-100 placeholder-gray-400 outline-none transition focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20"
                 />
                 <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/5" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mascot and logo */}
+        <div className="flex-1 w-full max-w-70 md:max-w-[calc(10rem+10rem-5rem)] aspect-square flex items-end relative ">
+          <div className="relative z-10 flex h-full aspect-square items-center justify-center [perspective:1000px]">
+            <div className="relative h-full w-full [transform-style:preserve-3d]">
+              {/* Front */}
+              <div className="absolute inset-0 [backface-visibility:hidden]">
+                <Image
+                  src="/mascot.png"
+                  alt="Mascot of the Artificial Intelligence Society"
+                  fill
+                />
               </div>
             </div>
           </div>
