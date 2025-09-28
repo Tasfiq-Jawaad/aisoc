@@ -41,6 +41,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --breakpoint-xxs: 360px;
+  --breakpoint-xs: 576px;
 }
 
 :root {
@@ -244,4 +246,39 @@
   .mobile-link::after {
     transition: none !important;
   }
+}
+
+/* Total cycle = 3s hold + 0.6s flip + 3s hold + 0.6s flip = 7.2s
+   Using percentages for precise holds and quick flips */
+@keyframes flipHold180 {
+  /* Start: show front for 3s */
+  0% {
+    transform: rotateY(0deg);
+  }
+  41.667% {
+    /* 3s / 7.2s */
+    transform: rotateY(0deg);
+  }
+
+  /* Quick flip front->back over 0.6s */
+  50% {
+    /* 3.6s / 7.2s */
+    transform: rotateY(180deg);
+  }
+
+  /* Hold back for 3s (180deg) */
+  91.667% {
+    /* 6.6s / 7.2s */
+    transform: rotateY(180deg);
+  }
+
+  /* Quick flip back->front over 0.6s to complete cycle */
+  100% {
+    transform: rotateY(360deg); /* visually same as 0deg */
+  }
+}
+
+.animate-flip-hold {
+  animation: flipHold180 7200ms ease-in-out infinite;
+  will-change: transform;
 }

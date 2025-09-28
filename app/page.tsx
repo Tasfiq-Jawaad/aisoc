@@ -31,12 +31,20 @@ export default function LandingWireframeNeon() {
         {/* Mascot and logo */}
         <div className="flex-1 w-full max-w-70 md:max-w-[calc(10rem+10rem-5rem)] aspect-square flex items-end relative ">
           <div className="relative z-10 flex h-full aspect-square items-center justify-center [perspective:1000px]">
-            <div className="relative h-full w-full [transform-style:preserve-3d]">
+            <div className="relative h-full w-full [transform-style:preserve-3d] animate-flip-hold">
               {/* Front */}
               <div className="absolute inset-0 [backface-visibility:hidden]">
                 <Image
                   src="/mascot.png"
                   alt="Mascot of the Artificial Intelligence Society"
+                  fill
+                />
+              </div>
+              {/* Back */}
+              <div className="absolute inset-0 rotate-y-180 [backface-visibility:hidden]">
+                <Image
+                  src={"/logo.png"}
+                  alt="Logo of the Artificial Intelligence Society"
                   fill
                 />
               </div>
