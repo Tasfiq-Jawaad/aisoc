@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LandingWireframeNeon() {
   return (
@@ -72,6 +73,26 @@ export default function LandingWireframeNeon() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Welcome Section */}
+      <section className="text-center max-w-4xl mx-auto my-[52px]">
+        <h2 className="text-lg xxs:text-2xl font-extrabold tracking-tight text-white">
+          Welcome to the Artificial Intelligence Society of the University of
+          Leeds
+        </h2>
+        <p className="mt-5 text-base md:text-[20px] text-gray-300">
+          We are the official student-led society for all things Artificial
+          Inteligence at the University of Leeds. Whether you're an expert,
+          beginer or just curious about AI, this is the right place for you.
+          Find out more about{" "}
+          <Link
+            href="https://engage.luu.org.uk/groups/4GQD2/artificial-intelligence-society"
+            className="underline decoration-[color:#eb5b6c80] [color:#eb5b6c] hover:[color:#ff6b7b]"
+          >
+            what we do.
+          </Link>
+        </p>
       </section>
     </main>
   );
