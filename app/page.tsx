@@ -30,13 +30,24 @@ export default function LandingWireframeNeon() {
   ];
 
   return (
-    <main className="p-2 xxs:p-4">
+    <main className="p-2 xxs:p-4 overflow-x-clip overflow-y-visible">
+      {/* Hero */}
       <section className="relative mx-auto flex flex-col lg:flex-row max-lg:items-center justify-center items-stretch gap-16">
+        {/* Background accents (subtle) */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          {/* soft diagonal sweep */}
+          <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full [background:#eb5b6c22] blur-[90px]" />
+          <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full [background:#eb5b6c1a] blur-[80px]" />
+        </div>
+
         <div className="relative max-w-5xl flex-1">
-          <div className="relative rounded-xl border border-white/10 bg-white/10 p-6 border-gap h-full">
+          <div className="rounded-xl border border-white/10 bg-white/10 p-6 border-gap h-full">
             <h1 className="text-2xl xxs:text-3xl xl:text-5xl font-extrabold tracking-tight text-white">
               Leeds Artificial Intelligence Society |
             </h1>
+            {/* tiny accent bar */}
+            <div className="mt-2 h-1 w-20 rounded-full [background:#eb5b6c99]" />
+
             <p className="mt-5 text-lg text-gray-400">
               Your home for all things artificial intelligence at the University
               of Leeds
@@ -48,7 +59,7 @@ export default function LandingWireframeNeon() {
                   type="text"
                   placeholder="Chat here..."
                   aria-label="Chat here"
-                  className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-gray-100 placeholder-gray-400 outline-none transition focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20"
+                  className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-gray-100 placeholder-gray-400 outline-none transition focus:[border-color:#eb5b6c99] focus:ring-2 focus:[--ring-color:#eb5b6c33] focus:[box-shadow:0_0_0_3px_var(--ring-color)]"
                 />
                 <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/5" />
               </div>
@@ -78,7 +89,7 @@ export default function LandingWireframeNeon() {
         </div>
 
         {/* Mascot and logo */}
-        <div className="flex-1 w-full max-w-70 md:max-w-[calc(10rem+10rem-5rem)] aspect-square flex items-end relative ">
+        <div className="flex-1 w-full max-w-70 md:max-w-[calc(10rem+10rem-5rem)] aspect-square flex items-end relative">
           <div className="relative z-10 flex h-full aspect-square items-center justify-center [perspective:1000px]">
             <div className="relative h-full w-full [transform-style:preserve-3d] animate-flip-hold">
               {/* Front */}
