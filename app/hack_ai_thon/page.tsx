@@ -18,12 +18,9 @@ export default function HackathonPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="#register" className="hack-btn-primary">
+            <Link href="/hack_ai_thon/register" className="hack-btn-primary">
               Register now
             </Link>
-            <a href="#about" className="hack-btn-ghost">
-              Learn more
-            </a>
           </div>
         </div>
 
@@ -222,11 +219,8 @@ export default function HackathonPage() {
               </p>
             </div>
             <div className="flex gap-3">
-              <Link href="#" className="hack-btn-primary">
+              <Link href="/hack_ai_thon/register" className="hack-btn-primary">
                 Grab your spot
-              </Link>
-              <Link href="#faq" className="hack-btn-ghost">
-                FAQ
               </Link>
             </div>
           </div>
