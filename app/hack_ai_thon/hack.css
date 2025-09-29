@@ -53,6 +53,68 @@
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+/* Small icon holder */
+.hack-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 0.75rem;
+  background: rgba(120, 170, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d7e6ff;
+}
+
+/* Theme chip */
+.hack-theme-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(
+    90deg,
+    rgba(90, 150, 255, 0.2),
+    rgba(150, 200, 255, 0.15)
+  );
+  border: 1px solid rgba(170, 210, 255, 0.35);
+  color: #e9f2ff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 22px rgba(90, 150, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Badges */
+.hack-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(170, 210, 255, 0.25);
+  background: rgba(140, 180, 255, 0.12);
+  color: #e2ecff;
+  font-size: 0.8rem;
+}
+
+/* List item bullet underline effect */
+.hack-li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.hack-li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgba(150, 200, 255, 0.9);
+  box-shadow: 0 0 12px rgba(120, 170, 255, 0.6);
+}
+
 /* Hero soft glow strip */
 .hack-hero-glow {
   background: radial-gradient(
