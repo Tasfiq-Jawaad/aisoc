@@ -86,6 +86,178 @@ export default function HackathonPage() {
           </div>
         </div>
       </section>
+
+      {/* TRACKS / USE CASES */}
+      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
+        <h3 className="font-mono text-xl md:text-2xl font-bold">Build for…</h3>
+        <div className="mt-5 grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <TrackCard
+            title="Students"
+            items={[
+              "Study copilots & revision planners",
+              "Note summarisation & concept linking",
+              "Accessibility & assistive tools",
+              "Wellbeing nudges and check‑ins",
+            ]}
+          />
+          <TrackCard
+            title="Educators"
+            items={[
+              "Lecture material assistants",
+              "Assessment & feedback support",
+              "Interactive content generation",
+              "Insights on learning gaps",
+            ]}
+          />
+          <TrackCard
+            title="University"
+            items={[
+              "Signal early wellbeing/engagement risk",
+              "Smarter outreach & comms",
+              "Feedback analysis & themes",
+              "Service discovery chatbots",
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* AI EXPECTATIONS */}
+      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm">
+          <h3 className="font-mono text-xl md:text-2xl font-bold">
+            No need to be an AI expert
+          </h3>
+          <p className="mt-3 text-blue-100/80">
+            We’re judging the usefulness, impact, and execution of your app—not
+            whether you trained a model from scratch. Use whatever gets you to a
+            great solution:
+          </p>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            <li className="hack-li">
+              Use LLM APIs (OpenAI, Claude, Gemini, etc.)
+            </li>
+            <li className="hack-li">
+              No‑code / low‑code (Bubble, Glide, etc.)
+            </li>
+            <li className="hack-li">
+              Fine‑tune or bring your own model if you want
+            </li>
+            <li className="hack-li">AI‑generated code is allowed</li>
+          </ul>
+          <div className="mt-4 text-blue-200/80 text-sm">
+            Tip: Scope small, ship fast. A sharp demo beats an unfinished big
+            vision.
+          </div>
+        </div>
+      </section>
+
+      {/* IDEA STARTERS */}
+      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
+        <h3 className="font-mono text-xl md:text-2xl font-bold">
+          Idea starters
+        </h3>
+        <div className="mt-5 grid gap-5 md:gap-6 md:grid-cols-2">
+          {[
+            {
+              title: "Study Copilot",
+              desc: "Personalised study plan + adaptive revision using your module outcomes and timetable.",
+            },
+            {
+              title: "Lecture Lens",
+              desc: "Upload slides to generate interactive summaries, quizzes and examples tailored to the cohort.",
+            },
+            {
+              title: "Wellbeing Signals",
+              desc: "Aggregate calendar, LMS and check‑in data to nudge support earlier—privacy‑first.",
+            },
+            {
+              title: "Feedback Whisperer",
+              desc: "Analyse student feedback to surface themes, sentiment and ‘what to do next’.",
+            },
+            {
+              title: "Skills Match",
+              desc: "Suggest societies, projects or mentors based on goals and history to boost belonging.",
+            },
+            {
+              title: "Integrity Assistant",
+              desc: "Guide students on ethical AI use, citations and originality with real‑time checks.",
+            },
+          ].map((idea, i) => (
+            <IdeaCard key={i} {...idea} />
+          ))}
+        </div>
+      </section>
+
+      {/* TEAM / PRIZES / PERKS */}
+      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-12">
+        <div className="grid gap-5 md:grid-cols-3">
+          <StatCard
+            title="Teams"
+            lines={["1–3 members", "Form on the day or bring your crew"]}
+          />
+          <StatCard
+            title="Prizes"
+            lines={["Cash prizes for Top 3", "Certificates for all"]}
+          />
+          <StatCard
+            title="Perks"
+            lines={["Free to join", "Food & refreshments provided"]}
+          />
+        </div>
+      </section>
+
+      {/* SCHEDULE + CTA */}
+      <section
+        id="register"
+        className="relative max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-14"
+      >
+        <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-400/10 via-blue-500/10 to-blue-700/10 p-6 md:p-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <h3 className="font-mono text-xl md:text-2xl font-bold">
+                Saturday, 11 Oct 2025 · 10:00–20:00
+              </h3>
+              <p className="mt-2 text-blue-100/80">
+                Helix, EC Stoner · University of Leeds · UoL students only
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <Link href="#" className="hack-btn-primary">
+                Grab your spot
+              </Link>
+              <Link href="#faq" className="hack-btn-ghost">
+                FAQ
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section
+        id="faq"
+        className="relative max-w-7xl mx-auto px-4 md:px-6 pb-16"
+      >
+        <h3 className="font-mono text-xl md:text-2xl font-bold">FAQ</h3>
+        <div className="mt-5 grid gap-5 md:grid-cols-2">
+          <FAQ
+            q="Do I need to know AI?"
+            a="No. Focus on a useful app; use AI where it helps—APIs, no‑code, or your own model."
+          />
+          <FAQ
+            q="Can I come solo?"
+            a="Yes. Teams are 1–3. You can form a team on the day."
+          />
+          <FAQ
+            q="What should I bring?"
+            a="Laptop, charger, student ID. Optional: datasets, Figma, API keys."
+          />
+          <FAQ
+            q="IP & ethics?"
+            a="You keep your IP. Use only data you have rights to. Be transparent if synthetic or AI‑generated."
+          />
+        </div>
+      </section>
     </main>
   );
 }
@@ -114,6 +286,56 @@ function DetailCard({
   );
 }
 
+function TrackCard({ title, items }: { title: string; items: string[] }) {
+  return (
+    <article className="group rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-sm relative overflow-hidden">
+      <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-blue-400/10 blur-2xl group-hover:bg-blue-400/15 transition" />
+      <h4 className="font-mono text-lg font-bold">{title}</h4>
+      <ul className="mt-3 space-y-2 text-blue-100/80 text-sm">
+        {items.map((t, i) => (
+          <li key={i} className="flex items-start gap-2">
+            <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-blue-300/80" />
+            <span>{t}</span>
+          </li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
+function IdeaCard({ title, desc }: { title: string; desc: string }) {
+  return (
+    <article className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-sm hover:border-blue-300/30 transition">
+      <h4 className="font-mono font-bold">{title}</h4>
+      <p className="mt-2 text-blue-100/80">{desc}</p>
+    </article>
+  );
+}
+
+function StatCard({ title, lines }: { title: string; lines: string[] }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+      <h4 className="font-mono text-lg font-bold">{title}</h4>
+      <ul className="mt-2 space-y-1 text-blue-100/80">
+        {lines.map((l, i) => (
+          <li key={i} className="flex items-start gap-2">
+            <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-300/80" />
+            <span>{l}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function FAQ({ q, a }: { q: string; a: string }) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+      <div className="font-mono font-semibold">{q}</div>
+      <p className="mt-2 text-blue-100/80">{a}</p>
+    </div>
+  );
+}
 /* ---------- Icons (inline, SSR-safe) ---------- */
 
 function CalendarIcon() {
