@@ -1,0 +1,195 @@
+.hack-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e7f0ff;
+  padding: 0.75rem 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+.hack-input::placeholder {
+  color: rgba(200, 220, 255, 0.45);
+}
+.hack-input:focus {
+  border-color: rgba(140, 180, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(120, 170, 255, 0.22);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Radio tiles */
+.hack-radio-tile {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 2px;
+  padding: 0.9rem 0.9rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #dfeaff;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.hack-radio-tile:hover {
+  border-color: rgba(170, 210, 255, 0.35);
+  background: rgba(255, 255, 255, 0.07);
+}
+.hack-radio {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.hack-radio-label {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.hack-radio-desc {
+  font-size: 0.85rem;
+  color: rgba(210, 225, 255, 0.75);
+}
+
+/* Selected state using :has() if supported; falls back gracefully */
+@supports selector(:has(*)) {
+  .hack-radio-tile:has(input:checked) {
+    border-color: rgba(150, 200, 255, 0.45);
+    box-shadow: 0 0 0 3px rgba(120, 170, 255, 0.22);
+  }
+}
+
+/* Fallback visual hint for keyboards */
+.hack-radio:focus-visible + .hack-radio-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Primary CTA: stronger neon, soft bloom, press effect */
+.hack-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(190, 215, 255, 0.28);
+  color: #071226;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  background: linear-gradient(180deg, #76a8ff 0%, #3e79ff 100%);
+  box-shadow: 0 10px 28px rgba(80, 140, 255, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+  transform: translateZ(0); /* GPU hint */
+  transition: transform 0.12s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+@media (min-width: 640px) {
+  .hack-cta {
+    width: auto;
+  }
+}
+.hack-cta:hover {
+  filter: saturate(112%);
+  box-shadow: 0 12px 34px rgba(80, 140, 255, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+.hack-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(80, 140, 255, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Subtle animated bloom behind the button */
+.hack-cta-glow {
+  position: absolute;
+  inset: -14px -18px;
+  border-radius: 1.25rem;
+  background: radial-gradient(
+    40% 50% at 50% 50%,
+    rgba(120, 170, 255, 0.35),
+    transparent 70%
+  );
+  filter: blur(22px);
+  opacity: 0.8;
+  z-index: -1;
+  pointer-events: none;
+  animation: cta-glow-float 6s ease-in-out infinite alternate;
+}
+@keyframes cta-glow-float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(4px) scale(1.02);
+    opacity: 0.95;
+  }
+}
+.hack-cta-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* Secondary CTA: glassy ghost with blue edge highlight */
+.hack-cta-ghost {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.9rem;
+  color: #cfe1ff;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(200, 220, 255, 0.22);
+  backdrop-filter: blur(6px);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.12s ease;
+}
+@media (min-width: 640px) {
+  .hack-cta-ghost {
+    width: auto;
+  }
+}
+.hack-cta-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(200, 220, 255, 0.34);
+  transform: translateY(-1px);
+}
+.hack-cta-ghost:active {
+  transform: translateY(0);
+}
+
+/* Edge highlight glow for ghost */
+.hack-cta-ghost-glow {
+  position: absolute;
+  inset: -10px;
+  border-radius: 1.1rem;
+  background: radial-gradient(
+      35% 45% at 80% 20%,
+      rgba(130, 180, 255, 0.22),
+      transparent 70%
+    ),
+    radial-gradient(
+      35% 45% at 20% 80%,
+      rgba(100, 150, 255, 0.18),
+      transparent 70%
+    );
+  filter: blur(16px);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Focus ring for both (keyboard users) */
+.hack-cta:focus-visible,
+.hack-cta-ghost:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(120, 170, 255, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
