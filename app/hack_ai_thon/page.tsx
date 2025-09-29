@@ -47,6 +47,45 @@ export default function HackathonPage() {
           <DetailCard icon={<TicketIcon />} title="Ticket" text="Free" />
         </div>
       </section>
+
+      {/* THEME */}
+      <section
+        id="about"
+        className="relative max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16"
+      >
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm">
+          <div className="flex items-start justify-between gap-6 flex-wrap">
+            <div className="max-w-3xl">
+              <h2 className="font-mono text-2xl md:text-3xl font-bold">
+                Theme: AI in Education
+              </h2>
+              <p className="mt-3 text-blue-100/80 text-base md:text-lg">
+                Build a real application that uses AI to make a meaningful
+                difference in learning and student experience. You don’t have to
+                be an AI expert—focus on solving a real problem and use AI where
+                it helps.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {[
+                  "Access & Inclusion",
+                  "Learning Outcomes",
+                  "Time-saving",
+                  "Wellbeing",
+                  "Community & Belonging",
+                  "Academic Integrity",
+                ].map((b) => (
+                  <span key={b} className="hack-badge">
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="relative w-full sm:w-auto">
+              <div className="hack-theme-chip">AI × Education</div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
