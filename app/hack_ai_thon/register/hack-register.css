@@ -22,7 +22,8 @@
 .hack-radio-tile {
   position: relative;
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto;
+  align-items: center;
   gap: 2px;
   padding: 0.9rem 0.9rem;
   border-radius: 0.9rem;

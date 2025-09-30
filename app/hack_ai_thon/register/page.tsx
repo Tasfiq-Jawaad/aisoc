@@ -1,12 +1,43 @@
+"use client";
+
 import Link from "next/link";
+import { useActionState, useState } from "react";
 import "../hack.css";
 import "./hack-register.css";
+import { submitRegistration } from "./submit";
+
+type TeamPref = "solo" | "team_2" | "team_3" | "match";
+type State = { error?: string };
 
 export default function HackathonRegisterPage() {
+  const [teamPref, setTeamPref] = useState<TeamPref>("solo");
+
+  const [state, action, pending] = useActionState<State, FormData>(
+    async (_prev, fd) => {
+      const result = await submitRegistration(fd);
+      if (result.ok) {
+        window.location.href = `/hack_ai_thon/register/success`;
+        return {};
+      }
+      return { error: result.message };
+    },
+    {}
+  );
+
+  const teammate1Note =
+    teamPref === "team_3"
+      ? "Required for Team of 3."
+      : teamPref === "team_2"
+      ? "Required for Team of 2."
+      : "Optional.";
+
+  const teammate2Note =
+    teamPref === "team_3" ? "Required for Team of 3." : "Optional.";
+
   return (
     <main className="relative overflow-hidden bg-[#0b1424] text-white">
       {/* Header */}
-      <section className="relative max-w-4xl mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-6">
+      <section className="relative max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-10">
         <h1 className="font-mono tracking-[0.02em] text-3xl md:text-5xl font-extrabold leading-tight">
           <span className="hack-title-dim">Team Registration </span>
           <br />
@@ -17,22 +48,26 @@ export default function HackathonRegisterPage() {
           One person registers on behalf of the team. You can join solo, bring
           1–2 teammates, or ask to form a team on the day.
         </p>
+        {/* Event summary */}
+        <div className="mt-4 text-blue-200/70">
+          Event: Saturday, 11 Oct 2025 · 10:00–20:00 · Helix, EC Stoner ·
+          University of Leeds
+        </div>
       </section>
 
-      {/* Form Card */}
+      {/* Form */}
       <section className="relative max-w-4xl mx-auto px-4 md:px-6 pb-16">
         <form
-          action="#"
-          method="post"
+          action={action}
           className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 md:p-8"
         >
-          {/* Registrant */}
+          {/* Primary participant */}
           <div className="space-y-1">
             <h2 className="font-mono text-xl md:text-2xl font-bold">
-              Your details
+              Contestant 1
             </h2>
             <p className="text-blue-200/70 text-sm">
-              Please use your University of Leeds email.
+              Use your university email.
             </p>
           </div>
 
@@ -41,8 +76,8 @@ export default function HackathonRegisterPage() {
               <label className="text-sm text-blue-200/80">Full name</label>
               <input
                 type="text"
-                name="fullName"
-                placeholder="Alex Johnson"
+                name="first_name"
+                placeholder="e.g., Alex Johnson"
                 className="hack-input"
                 required
               />
@@ -51,72 +86,206 @@ export default function HackathonRegisterPage() {
               <label className="text-sm text-blue-200/80">Student email</label>
               <input
                 type="email"
-                name="email"
-                placeholder="abc12345@leeds.ac.uk"
+                name="first_email"
+                placeholder="e.g., abc12345@leeds.ac.uk"
                 className="hack-input"
                 inputMode="email"
                 autoComplete="email"
                 required
               />
             </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-sm text-blue-200/80">
+                Dietary requirements
+              </label>
+              <input
+                type="text"
+                name="first_diet"
+                placeholder="e.g., Vegetarian / Vegan / Halal / None"
+                className="hack-input"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-sm text-blue-200/80">
+                Accessibility needs
+              </label>
+              <input
+                type="text"
+                name="first_disability"
+                placeholder="e.g., Wheelchair access, captions"
+                className="hack-input"
+              />
+            </div>
           </div>
 
-          {/* Team option */}
+          {/* Team preference */}
           <div className="mt-8 space-y-2">
             <h3 className="font-mono text-lg font-bold">Team preference</h3>
             <fieldset className="grid gap-3 md:grid-cols-3">
               <label className="hack-radio-tile">
                 <input
                   type="radio"
-                  name="teamSize"
+                  name="team_pref"
                   value="solo"
-                  defaultChecked
+                  checked={teamPref === "solo"}
+                  onChange={() => setTeamPref("solo")}
                   className="hack-radio"
                 />
-                <span className="hack-radio-label">Solo (1)</span>
-                <span className="hack-radio-desc">
-                  I’ll participate by myself
-                </span>
+                <span className="hack-radio-label">Team of 1</span>
               </label>
 
               <label className="hack-radio-tile">
                 <input
                   type="radio"
-                  name="teamSize"
-                  value="two"
+                  name="team_pref"
+                  value="team_2"
+                  checked={teamPref === "team_2"}
+                  onChange={() => setTeamPref("team_2")}
                   className="hack-radio"
                 />
                 <span className="hack-radio-label">Team of 2</span>
-                <span className="hack-radio-desc">
-                  My teammate will join me
-                </span>
               </label>
 
               <label className="hack-radio-tile">
                 <input
                   type="radio"
-                  name="teamSize"
-                  value="three"
+                  name="team_pref"
+                  value="team_3"
+                  checked={teamPref === "team_3"}
+                  onChange={() => setTeamPref("team_3")}
                   className="hack-radio"
                 />
                 <span className="hack-radio-label">Team of 3</span>
-                <span className="hack-radio-desc">Two teammates with me</span>
               </label>
 
               <label className="hack-radio-tile md:col-span-3">
                 <input
                   type="radio"
-                  name="teamSize"
+                  name="team_pref"
                   value="match"
+                  checked={teamPref === "match"}
+                  onChange={() => setTeamPref("match")}
                   className="hack-radio"
                 />
                 <span className="hack-radio-label">Form a team on the day</span>
                 <span className="hack-radio-desc">
-                  I’d like help finding teammates at the venue
+                  Team matching at the venue
                 </span>
               </label>
             </fieldset>
           </div>
+
+          {/* Team member #1 */}
+          {(teamPref === "team_2" || teamPref === "team_3") && (
+            <>
+              <div className="mt-8 space-y-1">
+                <h3 className="font-mono text-lg font-bold">Contestant 2</h3>
+                <p className="text-blue-200/70 text-sm">{teammate1Note}</p>
+              </div>
+              <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-blue-200/80">Full name</label>
+                  <input
+                    type="text"
+                    name="second_name"
+                    placeholder="e.g., Pat Taylor"
+                    className="hack-input"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-blue-200/80">
+                    Student email
+                  </label>
+                  <input
+                    type="email"
+                    name="second_email"
+                    placeholder="e.g., abc23456@leeds.ac.uk"
+                    className="hack-input"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-blue-200/80">
+                    Dietary requirements
+                  </label>
+                  <input
+                    type="text"
+                    name="second_diet"
+                    placeholder="e.g., Vegetarian / Vegan / Halal / None"
+                    className="hack-input"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-blue-200/80">
+                    Accessibility needs
+                  </label>
+                  <input
+                    type="text"
+                    name="second_disability"
+                    placeholder="e.g., Wheelchair access, captions"
+                    className="hack-input"
+                  />
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Team member #2 */}
+          {teamPref === "team_3" && (
+            <>
+              <div className="mt-8 space-y-1">
+                <h3 className="font-mono text-lg font-bold">Contestant 3</h3>
+                <p className="text-blue-200/70 text-sm">{teammate2Note}</p>
+              </div>
+              <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-blue-200/80">Full name</label>
+                  <input
+                    type="text"
+                    name="third_name"
+                    placeholder="e.g., Sam Lee"
+                    className="hack-input"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-blue-200/80">
+                    Student email
+                  </label>
+                  <input
+                    type="email"
+                    name="third_email"
+                    placeholder="e.g., abc34567@leeds.ac.uk"
+                    className="hack-input"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-blue-200/80">
+                    Dietary requirements
+                  </label>
+                  <input
+                    type="text"
+                    name="third_diet"
+                    placeholder="e.g., Vegetarian / Vegan / Halal / None"
+                    className="hack-input"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-blue-200/80">
+                    Accessibility needs
+                  </label>
+                  <input
+                    type="text"
+                    name="third_disability"
+                    placeholder="e.g., Wheelchair access, captions"
+                    className="hack-input"
+                  />
+                </div>
+              </div>
+            </>
+          )}
 
           {/* Teammates */}
           <div className="mt-8 space-y-1">
@@ -183,21 +352,11 @@ export default function HackathonRegisterPage() {
             <ul className="text-blue-200/80 text-sm space-y-2">
               <li className="flex gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-300/80 mt-1.5" />
-                <span>
-                  Open to University of Leeds students only. Please bring your
-                  student ID on the day.
-                </span>
+                <span>Open to students of Leeds only.</span>
               </li>
               <li className="flex gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-300/80 mt-1.5" />
                 <span>It’s free to join. Food and refreshments provided.</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-300/80 mt-1.5" />
-                <span>
-                  AI‑generated code is allowed. Be transparent about your use of
-                  AI tools.
-                </span>
               </li>
             </ul>
           </div>
@@ -205,27 +364,31 @@ export default function HackathonRegisterPage() {
           {/* Actions */}
           <div className="mt-8">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-              <button type="submit" className="hack-cta">
+              <button type="submit" className="hack-cta" disabled={pending}>
                 <span className="hack-cta-glow" aria-hidden />
-                <span className="hack-cta-label">Submit registration</span>
+                <span className="hack-cta-label">
+                  {pending ? "Submitting…" : "Submit registration"}
+                </span>
               </button>
 
-              <Link href="/hackathon" className="hack-cta-ghost">
+              <Link href="/hack_ai_thon" className="hack-cta-ghost">
                 <span className="hack-cta-ghost-glow" aria-hidden />
                 <span className="hack-cta-label">Back to overview</span>
               </Link>
             </div>
 
-            {/* Small reassurance line */}
-            <p className="mt-3 text-blue-200/60 text-xs sm:text-sm">
-              You can edit or complete teammate details later.
-            </p>
-          </div>
+            {state?.error && (
+              <p className="mt-3 text-red-300/80 text-sm">
+                Error: {state.error}
+              </p>
+            )}
 
-          {/* Event diary summary */}
-          <div className="mt-8 text-blue-200/70 text-sm">
-            Event: Saturday, 11 Oct 2025 · 10:00–20:00 · Helix, EC Stoner ·
-            University of Leeds
+            <p className="mt-3 text-blue-200/60 text-xs sm:text-sm">
+              Participant details can be updated later. Contact{" "}
+              <Link href={"mailto:committee@leedsaisoc.co.uk"}>
+                committee@leedsaisoc.co.uk
+              </Link>
+            </p>
           </div>
         </form>
       </section>
