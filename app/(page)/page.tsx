@@ -55,7 +55,7 @@ export default function LandingWireframeNeon() {
         <div className="relative max-w-5xl flex-1">
           <div className="rounded-xl border border-white/10 bg-white/10 p-6 border-gap h-full">
             <h1 className="text-2xl xxs:text-3xl xl:text-5xl font-extrabold tracking-tight text-white">
-              Leeds Artificial Intelligence Society |
+              Welcome to Leeds Artificial Intelligence Society
             </h1>
             {/* tiny accent bar */}
             <div className="mt-2 h-1 w-20 rounded-full [background:#eb5b6c99]" />
@@ -69,7 +69,7 @@ export default function LandingWireframeNeon() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Chat here..."
+                  placeholder="Chat here...(Coming soon)"
                   aria-label="Chat here"
                   className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-gray-100 placeholder-gray-400 outline-none transition focus:[border-color:#eb5b6c99] focus:ring-2 focus:[--ring-color:#eb5b6c33] focus:[box-shadow:0_0_0_3px_var(--ring-color)]"
                 />
