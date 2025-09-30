@@ -26,6 +26,10 @@ export default function RootLayout({
       displayName: "Contact",
       url: "concact",
     },
+    {
+      displayName: "<hack_ai_thon>",
+      url: "hack_ai_thon",
+    },
   ];
 
   return (
