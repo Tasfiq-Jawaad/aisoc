@@ -1,3 +1,12 @@
+import {
+  Award,
+  Handshake,
+  Laptop,
+  Ticket,
+  Trophy,
+  Users,
+  Utensils,
+} from "lucide-react";
 import Link from "next/link";
 import "./hack.css";
 
@@ -5,7 +14,7 @@ export default function HackathonPage() {
   return (
     <main className="relative bg-[#0b1424] text-white">
       {/* HERO */}
-      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
+      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="relative">
           <div className="absolute -inset-x-4 -top-8 h-48 hack-hero-glow" />
           <h1 className="font-mono tracking-[0.02em] text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight">
@@ -21,27 +30,97 @@ export default function HackathonPage() {
             <Link href="/hack_ai_thon/register" className="hack-btn-primary">
               Register now
             </Link>
+            <a href="#theme" className="hack-btn-ghost">
+              Learn more
+            </a>
           </div>
         </div>
 
-        {/* Key details bar */}
-        <div className="mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <DetailCard
-            icon={<CalendarIcon />}
-            title="When"
-            text="11 Oct 2025 · 10:00–20:00"
+        {/* Inline key details strip */}
+        <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-3 text-sm md:text-base">
+          <div>
+            <DetailInline
+              icon={<CalendarIcon />}
+              text="11 Oct 2025 · 10:00–20:00"
+            />
+            <SeparatorDot />
+          </div>
+          <div>
+            <DetailInline
+              icon={<PinIcon />}
+              text="Helix, EC Stoner · University of Leeds"
+            />
+            <SeparatorDot />
+          </div>
+          <div>
+            <DetailInline icon={<TicketIcon />} text="Free to join" />
+            <SeparatorDot />
+          </div>
+          <DetailInline
+            icon={<Laptop />}
+            text="Access to RTX 4090 laptop during the hackathon"
           />
-          <DetailCard
-            icon={<PinIcon />}
-            title="Where"
-            text="Helix, EC Stoner · University of Leeds"
-          />
-          <DetailCard
-            icon={<UsersIcon />}
-            title="Who"
-            text="Leeds students only · Teams of 1–3"
-          />
-          <DetailCard icon={<TicketIcon />} title="Ticket" text="Free" />
+        </div>
+      </section>
+
+      {/* TEAM / PRIZES / PERKS */}
+      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-12">
+        <div className="grid gap-5 md:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <h4 className="font-mono text-lg font-bold">Teams</h4>
+            <ul className="mt-2 space-y-1 text-blue-100/80">
+              <li className="flex items-center gap-2">
+                <span className="hack-icon h-7 w-7">
+                  <Users className="h-4 w-4" />
+                </span>
+                <span>1–3 members</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="hack-icon h-7 w-7">
+                  <Handshake className="h-4 w-4" />
+                </span>
+                <span>Form on the day or bring your teammates</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <h4 className="font-mono text-lg font-bold">Prizes</h4>
+            <ul className="mt-2 space-y-1 ">
+              <li className="flex items-center gap-2">
+                <span className="hack-icon h-7 w-7">
+                  <Trophy className="h-4 w-4" />
+                </span>
+                <span>
+                  Cash prizes and trophies for all members of the Top 3
+                </span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="hack-icon h-7 w-7">
+                  <Award className="h-4 w-4" />
+                </span>
+                <span>Certificates for all</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <h4 className="font-mono text-lg font-bold">Perks</h4>
+            <ul className="mt-2 space-y-1 ">
+              <li className="flex items-center gap-2">
+                <span className="hack-icon h-7 w-7">
+                  <Ticket className="h-4 w-4" />
+                </span>
+                <span>Free to join</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="hack-icon h-7 w-7">
+                  <Utensils className="h-4 w-4" />
+                </span>
+                <span>Food &amp; refreshments provided</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -56,7 +135,7 @@ export default function HackathonPage() {
               <h2 className="font-mono text-2xl md:text-3xl font-bold">
                 Theme: AI in Education
               </h2>
-              <p className="mt-3 text-blue-100/80 text-base md:text-lg">
+              <p className="mt-5 text-blue-100/80 text-base md:text-lg">
                 Build a real application that uses AI to make a meaningful
                 difference in learning and student experience. You don’t have to
                 be an AI expert—focus on solving a real problem and use AI where
@@ -95,6 +174,7 @@ export default function HackathonPage() {
               "Note summarisation & concept linking",
               "Accessibility & assistive tools",
               "Wellbeing nudges and check‑ins",
+              "etc",
             ]}
           />
           <TrackCard
@@ -104,6 +184,7 @@ export default function HackathonPage() {
               "Assessment & feedback support",
               "Interactive content generation",
               "Insights on learning gaps",
+              "etc",
             ]}
           />
           <TrackCard
@@ -113,9 +194,15 @@ export default function HackathonPage() {
               "Smarter outreach & comms",
               "Feedback analysis & themes",
               "Service discovery chatbots",
+              "etc",
             ]}
           />
         </div>
+        <p className="mt-3 text-blue-100/80 text-base md:text-lg">
+          Build application for students, educators or institiotion or a
+          combination of above. Pick from example challenges or bring your own
+          ideas.
+        </p>
       </section>
 
       {/* AI EXPECTATIONS */}
@@ -145,64 +232,6 @@ export default function HackathonPage() {
             Tip: Scope small, ship fast. A sharp demo beats an unfinished big
             vision.
           </div>
-        </div>
-      </section>
-
-      {/* IDEA STARTERS */}
-      <section
-        id="ideas"
-        className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10"
-      >
-        <h3 className="font-mono text-xl md:text-2xl font-bold">
-          Idea starters
-        </h3>
-        <div className="mt-5 grid gap-5 md:gap-6 md:grid-cols-2">
-          {[
-            {
-              title: "Study Copilot",
-              desc: "Personalised study plan + adaptive revision using your module outcomes and timetable.",
-            },
-            {
-              title: "Lecture Lens",
-              desc: "Upload slides to generate interactive summaries, quizzes and examples tailored to the cohort.",
-            },
-            {
-              title: "Wellbeing Signals",
-              desc: "Aggregate calendar, LMS and check‑in data to nudge support earlier—privacy‑first.",
-            },
-            {
-              title: "Feedback Whisperer",
-              desc: "Analyse student feedback to surface themes, sentiment and ‘what to do next’.",
-            },
-            {
-              title: "Skills Match",
-              desc: "Suggest societies, projects or mentors based on goals and history to boost belonging.",
-            },
-            {
-              title: "Integrity Assistant",
-              desc: "Guide students on ethical AI use, citations and originality with real‑time checks.",
-            },
-          ].map((idea, i) => (
-            <IdeaCard key={i} {...idea} />
-          ))}
-        </div>
-      </section>
-
-      {/* TEAM / PRIZES / PERKS */}
-      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-12">
-        <div className="grid gap-5 md:grid-cols-3">
-          <StatCard
-            title="Teams"
-            lines={["1–3 members", "Form on the day or bring your crew"]}
-          />
-          <StatCard
-            title="Prizes"
-            lines={["Cash prizes for Top 3", "Certificates for all"]}
-          />
-          <StatCard
-            title="Perks"
-            lines={["Free to join", "Food & refreshments provided"]}
-          />
         </div>
       </section>
 
@@ -236,20 +265,22 @@ export default function HackathonPage() {
         className="relative max-w-7xl mx-auto px-4 md:px-6 pb-16"
       >
         <h3 className="font-mono text-xl md:text-2xl font-bold">FAQ</h3>
-        <div className="mt-5 grid gap-5 md:grid-cols-2">
-          <FAQ
+
+        <div className="mt-5 space-y-3">
+          <FAQItem
             q="Do I need to know AI?"
             a="No. Focus on a useful app; use AI where it helps—APIs, no‑code, or your own model."
+            defaultOpen
           />
-          <FAQ
+          <FAQItem
             q="Can I come solo?"
             a="Yes. Teams are 1–3. You can form a team on the day."
           />
-          <FAQ
+          <FAQItem
             q="What should I bring?"
             a="Laptop, charger, student ID. Optional: datasets, Figma, API keys."
           />
-          <FAQ
+          <FAQItem
             q="IP & ethics?"
             a="You keep your IP. Use only data you have rights to. Be transparent if synthetic or AI‑generated."
           />
@@ -261,33 +292,12 @@ export default function HackathonPage() {
 
 /* ---------- Components ---------- */
 
-function DetailCard({
-  icon,
-  title,
-  text,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  text: string;
-}) {
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm flex items-center gap-3">
-      <div className="hack-icon">{icon}</div>
-      <div>
-        <div className="text-blue-200/70 text-xs uppercase tracking-wider">
-          {title}
-        </div>
-        <div className="text-sm md:text-base">{text}</div>
-      </div>
-    </div>
-  );
-}
-
 function TrackCard({ title, items }: { title: string; items: string[] }) {
   return (
     <article className="group rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-sm relative overflow-hidden">
       <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-blue-400/10 blur-2xl group-hover:bg-blue-400/15 transition" />
       <h4 className="font-mono text-lg font-bold">{title}</h4>
+      <small>For example...</small>
       <ul className="mt-3 space-y-2 text-blue-100/80 text-sm">
         {items.map((t, i) => (
           <li key={i} className="flex items-start gap-2">
@@ -299,38 +309,28 @@ function TrackCard({ title, items }: { title: string; items: string[] }) {
     </article>
   );
 }
-
-function IdeaCard({ title, desc }: { title: string; desc: string }) {
+function FAQItem({
+  q,
+  a,
+  defaultOpen = false,
+}: {
+  q: string;
+  a: string;
+  defaultOpen?: boolean;
+}) {
   return (
-    <article className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-sm hover:border-blue-300/30 transition">
-      <h4 className="font-mono font-bold">{title}</h4>
-      <p className="mt-2 text-blue-100/80">{desc}</p>
-    </article>
-  );
-}
-
-function StatCard({ title, lines }: { title: string; lines: string[] }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-      <h4 className="font-mono text-lg font-bold">{title}</h4>
-      <ul className="mt-2 space-y-1 text-blue-100/80">
-        {lines.map((l, i) => (
-          <li key={i} className="flex items-start gap-2">
-            <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-300/80" />
-            <span>{l}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function FAQ({ q, a }: { q: string; a: string }) {
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-      <div className="font-mono font-semibold">{q}</div>
-      <p className="mt-2 text-blue-100/80">{a}</p>
-    </div>
+    <details
+      className="hack-accordion"
+      {...(defaultOpen ? { open: true } : {})}
+    >
+      <summary className="hack-accordion-summary">
+        <span className="font-mono font-semibold">{q}</span>
+        <span className="hack-accordion-icon" aria-hidden />
+      </summary>
+      <div className="hack-accordion-panel">
+        <p className="text-blue-100/80">{a}</p>
+      </div>
+    </details>
   );
 }
 /* ---------- Icons (inline, SSR-safe) ---------- */
@@ -349,17 +349,24 @@ function PinIcon() {
     </svg>
   );
 }
-function UsersIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-      <path d="M12 13a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-9 8a7 7 0 0 1 14 0H3Zm16-9a3 3 0 1 0-2.83-4H17a4 4 0 0 1 0 8h-.17A3 3 0 0 0 19 12Z" />
-    </svg>
-  );
-}
 function TicketIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
       <path d="M3 7a2 2 0 0 1 2-2h6v3a2 2 0 1 0 2 0V5h6a2 2 0 0 1 2 2v3h-2a2 2 0 1 0 0 4h2v3a2 2 0 0 1-2 2h-6v-3a2 2 0 1 0-2 0v3H5a2 2 0 0 1-2-2v-3h2a2 2 0 1 0 0-4H3V7Z" />
     </svg>
   );
+}
+
+/* ---------- Lean components ---------- */
+
+function DetailInline({ icon, text }: { icon: React.ReactNode; text: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+      <span className="hack-icon h-7 w-7">{icon}</span>
+      <span className="text-blue-100/90">{text}</span>
+    </span>
+  );
+}
+function SeparatorDot() {
+  return <span className="mx-1 md:mx-2 text-blue-300/40">·</span>;
 }
