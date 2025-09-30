@@ -65,15 +65,7 @@ export default function RootLayout({
           />
 
           {/* Bar: brand + hamburger */}
-          <div className="md:hidden flex items-center justify-between px-2 md:px-0">
-            <Link
-              href="/"
-              className="text-lg font-semibold tracking-tight text-white"
-              aria-label="Home"
-            >
-              AI Society
-            </Link>
-
+          <div className="md:hidden flex items-center justify-end px-2 md:px-0">
             {/* Hamburger button (label controls the checkbox) */}
             <label
               htmlFor="menu-toggle"
