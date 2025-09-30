@@ -11,7 +11,7 @@ export default function RegisterSuccessPage() {
       </div>
 
       {/* Header */}
-      <section className="relative max-w-3xl mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-6">
+      <section className="relative max-w-3xl mx-auto px-4 md:px-6 py-8 md:py-10">
         <h1 className="font-mono tracking-[0.02em] text-3xl md:text-5xl font-extrabold leading-tight">
           <span className="hack-title-dim">Registration </span>
           <span className="hack-title-accent">{`<success>`}</span>
@@ -26,9 +26,6 @@ export default function RegisterSuccessPage() {
       <section className="relative max-w-3xl mx-auto px-4 md:px-6 pb-16">
         <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8">
           <div className="flex items-start gap-4">
-            <div className="hack-success-icon" aria-hidden>
-              <CheckIcon />
-            </div>
             <div>
               <h2 className="font-mono text-xl md:text-2xl font-bold">
                 Thanks for registering
