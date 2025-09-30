@@ -1,3 +1,4 @@
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -129,23 +130,43 @@ export default function RootLayout({
 
               {/* Socials: larger tap targets on mobile */}
               <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-3">
-                {[
-                  { name: "X", href: "#" },
-                  { name: "Instagram", href: "#" },
-                  { name: "LinkedIn", href: "#" },
-                  { name: "Discord", href: "#" },
-                ].map((s, i) => (
-                  <Link
-                    key={i}
-                    href={s.href}
-                    aria-label={s.name}
-                    className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white transition"
+                <Link
+                  href={"https://instagram.com/leedsaisoc"}
+                  aria-label={"Instagram"}
+                  className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white transition"
+                >
+                  <Instagram />
+                </Link>
+                <Link
+                  href={"https://linkedin.com/company/leedsaisoc"}
+                  aria-label={"Instagram"}
+                  className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white transition"
+                >
+                  <Linkedin />
+                </Link>
+
+                <Link
+                  href={"https://x.com/LeedsAISoc"}
+                  aria-label={"X"}
+                  className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white transition"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
                   >
-                    <span className="text-sm font-semibold">{s.name[0]}</span>
-                    <span className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-white/5" />
-                    <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition [box-shadow:0_0_24px_0_#eb5b6c66]" />
-                  </Link>
-                ))}
+                    <path d="M18.244 3H21l-6.5 7.43L22 21h-6.758l-4.41-5.373L5.77 21H3l6.97-7.963L2 3h6.758l4.05 4.94L18.244 3Zm-2.37 16h1.708L8.25 5h-1.7l9.324 14Z" />
+                  </svg>
+                </Link>
+                <Link
+                  href={"https://www.youtube.com/@leedsaisoc"}
+                  aria-label={"Youtube"}
+                  className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white transition"
+                >
+                  <Youtube />
+                </Link>
               </div>
             </div>
 
