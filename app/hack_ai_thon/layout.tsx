@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Leeds <hack_ai_thon> | Leeds Artificial Intelligence Society",
+  title: "Leeds hack_ai_thon | Leeds Artificial Intelligence Society",
   description:
     "The Leeds Artificial Intelligence Society presents, the first student-led AI-themed hackathon at the University of Leeds. Unleash your innovation. Build AI‑powered apps to improve how we learn, teach, and support students.",
   openGraph: {
     url: "https://www.leedsaisoc.co.uk/hack_ai_thon/",
-    siteName: "Leeds <hack_ai_thon>",
+    siteName: "Leeds hack_ai_thon",
   },
   robots: {
     index: true,
