@@ -13,12 +13,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://leedsaisoc.co.uk"),
-  title: {
-    default: "Leeds AI Society",
-    template: "%s | Leeds AI Society",
+  title: "Leeds Artificial Intelligence Society | University of Leeds",
+  description:
+    "Your home for all things artificial intelligence at the University of Leeds. From beginner workshops to hackathons, panels, and socials—everyone is welcome.",
+  alternates: {
+    canonical: "https://leedsaisoc.co.uk/",
   },
-  applicationName: "Leeds AI Society",
+  openGraph: {
+    type: "website",
+    url: "https://www.leedsaisoc.co.uk/",
+    siteName: "Leeds AI Society",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@LeedsAISoc",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
