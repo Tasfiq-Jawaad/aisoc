@@ -5,61 +5,179 @@ import Link from "next/link";
 // Placeholder data.
 const upcoming = [
   {
-    title: "Intro to Machine Learning Workshop",
-    date: "2025-10-12",
-    time: "17:00–19:00",
-    location: "EC Stoner, LT B",
+    title: "Talk to the Future I: Build Your First AI Chatbot",
+    date: "2025-09-30",
+    time: "17:00–18:30",
+    location: "Helix, Level 7, EC Stoner building, University of Leeds",
     badge: "Workshop",
-    image: "/placeholder-event-1.jpg",
-    url: "#",
+    image: "/events/Talk to the Future I.gif",
+    url: "https://engage.luu.org.uk/events/YRD32/talk-to-the-future-i-build-your-first-ai-chatbot",
   },
   {
-    title: "AI Ethics: Panel with Industry & Academia",
-    date: "2025-10-24",
-    time: "18:00–20:00",
-    location: "Roger Stevens, LT 08",
-    badge: "Panel",
-    image: "/placeholder-event-2.jpg",
-    url: "#",
-  },
-  {
-    title: "Hack the North: AI Mini-Hack",
-    date: "2025-11-08",
-    time: "09:00–21:00",
-    location: "Nexus Building",
+    title: "Leeds <hack_ai_thon>",
+    date: "2025-10-11",
+    time: "10:00-20:00",
+    location: "Helix, Level 7, EC Stoner building, University of Leeds",
     badge: "Hackathon",
-    image: "/placeholder-event-3.jpg",
+    image: "/events/Leeds <hack_ai_thon>.gif",
+    url: "#",
+  },
+  {
+    title: "Talk to the Future II: Power Up Your AI Chatbot",
+    date: "TBA",
+    time: "TBA",
+    location: "Helix, Level 7, EC Stoner building, University of Leeds",
+    badge: "Workshop",
+    image: "/events/Talk to the Future II.gif",
     url: "#",
   },
 ];
 
 const past = [
   {
-    title: "GenAI Prompt Jam",
-    date: "2025-03-14",
-    time: "18:00–20:30",
-    location: "Nexus Collaboration Space",
-    badge: "Social",
-    image: "/placeholder-event-4.jpg",
-    url: "#",
+    title: "Weekly AI Journal Club",
+    date: "Last: 30 Jul 2025",
+    time: "15:00–16:00",
+    location: "Sir William Henry Bragg Buliding",
+    badge: "Research study",
+    image: "",
+    url: "https://engage.luu.org.uk/events/76TFT/weekly-ai-journal-club",
   },
   {
-    title: "Search with RAG: Hands-on",
-    date: "2025-02-21",
-    time: "17:00–19:00",
-    location: "School of Computing",
+    title: "AI Workshop 6: AI Project Showcase (Online)",
+    date: "2025-05-03",
+    time: "11:00–12:00",
+    location: "Online Microsoft Teams",
     badge: "Workshop",
-    image: "/placeholder-event-5.jpg",
-    url: "#",
+    image: "",
+    url: "https://engage.luu.org.uk/events/M29W6/ai-workshop-6-ai-project-showcase-online",
   },
   {
-    title: "Careers in AI: Lightning Talks",
-    date: "2024-11-28",
-    time: "18:00–20:00",
-    location: "Roger Stevens",
-    badge: "Talks",
-    image: "/placeholder-event-6.jpg",
-    url: "#",
+    title: "AI Workshop 6: AI Project Showcase",
+    date: "29 April 2025",
+    time: "17:00–18:00",
+    location: "Clarendon Building Cluster GR.07",
+    badge: "Project showcase",
+    image: "",
+    url: "https://engage.luu.org.uk/events/8V99H/ai-workshop-6-ai-project-showcase",
+  },
+  {
+    title: "AI Society AGM",
+    date: "28 April 2025",
+    time: "13:00–14:00",
+    location:
+      "Hybrid (Sir William Henry Bragg Building 2.10 and Microsoft Teams)",
+    badge: "Meeting",
+    image: "/logo.svg",
+    url: "https://engage.luu.org.uk/events/8V99H/ai-workshop-6-ai-project-showcase",
+  },
+  {
+    title: "Running AI Locally: DeepSeek-R1 on Your Machine",
+    date: "23 April 2025",
+    time: "11:00–13:00",
+    location: "Online Microsoft Teams",
+    badge: "Workshop",
+    image: "/events/Running AI Locally.gif",
+    url: "https://engage.luu.org.uk/events/J4RR3/running-ai-locally-deepseek-r1-on-your-machine",
+  },
+  {
+    title: "AI Workshop 5: AI Mini-Hackathon (Online)",
+    date: "15 March 2025",
+    time: "11:00–12:00",
+    location: "Online Microsoft Teams",
+    badge: "Hackathon",
+    image: "",
+    url: "https://engage.luu.org.uk/events/WPP46/ai-workshop-5-ai-mini-hackathon-online",
+  },
+  {
+    title: "AI Workshop 4: Ethics of AI (Online)",
+    date: "08 March 2025",
+    time: "11:00–12:00",
+    location: "Online Microsoft Teams",
+    badge: "Workshop",
+    image: "",
+    url: "https://engage.luu.org.uk/events/V6MYT/ai-workshop-4-ethics-of-ai-online",
+  },
+  {
+    title: "AI Workshop 3: Neural Networks (Online)",
+    date: "01 March 2025",
+    time: "11:00–12:00",
+    location: "Online Microsoft Teams",
+    badge: "Workshop",
+    image: "",
+    url: "https://engage.luu.org.uk/events/79BYC/ai-workshop-3-neural-networks-online",
+  },
+  {
+    title: "AI^2 - Understanding DeepSeek",
+    date: "26 February 2025",
+    time: "16:00–18:00",
+    location: "Sir William Henry Bragg Building GR.18",
+    badge: "Research study",
+    image: "",
+    url: "https://engage.luu.org.uk/events/G7KBX/ai2-understanding-deepseek",
+  },
+  {
+    title: "AI Workshop 5: AI Mini-Hackathon",
+    date: "25 February 2025",
+    time: "17:00–18:00",
+    location: "Clarendon Building Cluster GR.07",
+    badge: "Hackathon",
+    image: "",
+    url: "https://engage.luu.org.uk/events/4GQBF/ai-workshop-5-ai-mini-hackathon",
+  },
+  {
+    title: "AI Workshop 2: Building a Machine Learning Pipeline (Online)",
+    date: "22 February 2025",
+    time: "11:00–12:00",
+    location: "Online Microsoft Teams",
+    badge: "Workshop",
+    image: "",
+    url: "https://engage.luu.org.uk/events/XHWCX/ai-workshop-2-building-a-machine-learning-pipeline-online",
+  },
+  {
+    title: "AI Workshop 4: Ethics of AI",
+    date: "18 February 2025",
+    time: "17:00–18:00",
+    location: "Clarendon Building Cluster GR.07",
+    badge: "Workshop",
+    image: "",
+    url: "https://engage.luu.org.uk/events/R6KC7/ai-workshop-4-ethics-of-ai",
+  },
+  {
+    title: "AI Workshop 1: Introduction to AI (Online)",
+    date: "15 February 2025",
+    time: "11:00–12:00",
+    location: "Online Microsoft Teams",
+    badge: "Workshop",
+    image: "",
+    url: "https://engage.luu.org.uk/events/K7PVQ/ai-workshop-1-introduction-to-ai-online",
+  },
+  {
+    title: "AI Workshop 3: Neural Networks",
+    date: "11 February 2025",
+    time: "17:00–18:00",
+    location: "Clarendon Building Cluster GR.07",
+    badge: "Workshop",
+    image: "",
+    url: "https://engage.luu.org.uk/events/9PJ3Y/ai-workshop-3-neural-networks",
+  },
+  {
+    title: "AI Workshop 2: Building a Machine Learning Pipeline",
+    date: "04 February 2025",
+    time: "17:00–18:00",
+    location: "Clarendon Building Cluster GR.07",
+    badge: "Workshop",
+    image: "",
+    url: "https://engage.luu.org.uk/events/GXWWT/ai-workshop-2-building-a-machine-learning-pipeline",
+  },
+  {
+    title: "AI Workshop 1: Introduction to AI",
+    date: "28 January 2025",
+    time: "17:00–18:00",
+    location: "Sir William Henry Bragg Building",
+    badge: "Workshop",
+    image: "",
+    url: "https://engage.luu.org.uk/events/3XJK4/ai-workshop-1-introduction-to-ai",
   },
 ];
 
@@ -163,7 +281,7 @@ function EventGrid({
 
           {/* subtle hover tint for upcoming; muted for past */}
           <div
-            className={`absolute inset-0 opacity-0 transition duration-300 ${
+            className={`pointer-events-none absolute inset-0 opacity-0 transition duration-300 ${
               isPast
                 ? "bg-gradient-to-b from-transparent via-white/0 to-white/0"
                 : "bg-gradient-to-b from-transparent via-[color:#eb5b6c1a] to-[color:#eb5b6c1a]"
@@ -172,15 +290,17 @@ function EventGrid({
 
           {/* Image */}
           <div className="relative h-40 md:h-44 w-full overflow-hidden">
-            <Image
-              src={e.image}
-              alt={e.title}
-              fill
-              className={`object-cover scale-105 transition-transform duration-500 ${
-                isPast ? "" : "group-hover:scale-110"
-              }`}
-              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            />
+            {e.image && (
+              <Image
+                src={e.image}
+                alt={e.title}
+                fill
+                className={`object-contain scale-105 transition-transform duration-500 ${
+                  isPast ? "" : "group-hover:scale-110"
+                }`}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              />
+            )}
             <div className="absolute left-3 top-3">
               <span
                 className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold backdrop-blur border ${
@@ -212,7 +332,7 @@ function EventGrid({
             <div className="mt-3 flex flex-col gap-1 text-sm text-gray-300">
               <div className="flex flex-wrap items-center gap-2">
                 <span
-                  className={`inline-block h-1.5 w-1.5 rounded-full ${
+                  className={`inline-block h-2.5 w-2.5 rounded-full ${
                     isPast ? "bg-gray-400" : "[background:#eb5b6c]"
                   }`}
                 />
@@ -251,7 +371,7 @@ function EventGrid({
                 Details <span aria-hidden>→</span>
               </Link>
 
-              {isPast ? (
+              {/* {isPast ? (
                 <span className="text-xs text-gray-500">Ended</span>
               ) : (
                 <Link
@@ -260,7 +380,7 @@ function EventGrid({
                 >
                   RSVP
                 </Link>
-              )}
+              )} */}
             </div>
           </div>
         </article>
@@ -270,6 +390,8 @@ function EventGrid({
 }
 
 function formatDate(iso: string) {
+  if (iso === "TBA") return iso;
+  if (iso.startsWith("Last")) return iso;
   try {
     return new Date(iso).toLocaleDateString(undefined, {
       weekday: "short",

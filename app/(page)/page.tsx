@@ -161,7 +161,7 @@ export default function LandingWireframeNeon() {
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5"
             >
               <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-b from-transparent via-[color:#eb5b6c1a] to-[color:#eb5b6c1a]" />
+              <div className="pointer-events-none  absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-b from-transparent via-[color:#eb5b6c1a] to-[color:#eb5b6c1a]" />
               <div className="relative h-40 md:h-44 w-full overflow-hidden">
                 <Image
                   src={e.image}
@@ -213,20 +213,20 @@ export default function LandingWireframeNeon() {
                 </div>
 
                 {/* todo: issue 3 and 4 */}
-                {/* <div className="mt-4 flex items-center justify-between">
+                <div className="mt-4 flex items-center justify-between">
                   <Link
                     href="#"
                     className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
                   >
                     Details <span aria-hidden>→</span>
                   </Link>
-                  <Link
+                  {/* <Link
                     href="#"
                     className="rounded-lg border [border-color:#eb5b6c66] [background:#eb5b6c1a] [color:#ff909c] hover:[background:#eb5b6c33] px-3 py-1.5 text-sm transition"
                   >
                     RSVP
-                  </Link>
-                </div> */}
+                  </Link> */}
+                </div>
               </div>
             </article>
           ))}
