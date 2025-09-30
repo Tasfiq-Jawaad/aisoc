@@ -13,31 +13,31 @@ const committee: Member[] = [
     name: "Mohammad Tasfiq Jawaad",
     role: "President",
     email: "sc23mtj@leeds.ac.uk",
-    image: "/people/president.jpg",
+    image: "/mascot.svg",
   },
   {
     name: "Mustafa Syed",
     role: "Secretary",
     email: "sc22ms@leeds.ac.uk",
-    image: "/people/secretary.jpg",
+    image: "/mascot.svg",
   },
   {
     name: "George Baker",
     role: "Treasurer",
     email: "G.W.Baker@leeds.ac.uk",
-    image: "/people/treasurer.jpg",
+    image: "/mascot.svg",
   },
   {
     name: "Omar Choudhry",
     role: "Chair",
     email: "O.Choudhry@leeds.ac.uk",
-    image: "/people/chair.jpg",
+    image: "/mascot.svg",
   },
   {
     name: "Mohammed Butt",
     role: "EPS Outreach Officer",
     email: "mn22mrb@leeds.ac.uk",
-    image: "/people/outreach.jpg",
+    image: "/mascot.svg",
   },
 ];
 
@@ -68,20 +68,20 @@ export default function CommitteePage() {
         {committee.map((m, i) => (
           <article
             key={`${m.email}-${i}`}
-            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5"
           >
             <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10" />
 
             {/* Image */}
-            <div className="relative h-56 w-full overflow-hidden">
+            <div className="relative h-56 w-full">
               <Image
                 src={m.image}
                 alt={`${m.name} — ${m.role}`}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
                 sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
               />
-              <div className="absolute left-3 top-3">
+              <div className="absolute -left-2 -top-2 md:-left-3 md:-top-3 ">
                 <span className="inline-flex items-center rounded-full [background:#eb5b6c1a] [color:#ff909c] [border-color:#eb5b6c4d] border px-3 py-1 text-xs font-semibold backdrop-blur">
                   {m.role}
                 </span>
@@ -89,7 +89,7 @@ export default function CommitteePage() {
             </div>
 
             {/* Content */}
-            <div className="p-4 md:p-5">
+            <div className="pt-4 md:pt-5">
               <h2 className="text-white font-bold text-lg md:text-xl tracking-tight">
                 {m.name}
               </h2>
