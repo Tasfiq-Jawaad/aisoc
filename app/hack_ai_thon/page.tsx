@@ -3,9 +3,9 @@ import "./hack.css";
 
 export default function HackathonPage() {
   return (
-    <main className="relative overflow-hidden bg-[#0b1424] text-white">
+    <main className="relative bg-[#0b1424] text-white">
       {/* HERO */}
-      <section className="relative max-w-7xl mx-auto px-4 md:px-6 pt-16 pb-12 md:pt-24 md:pb-16">
+      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
         <div className="relative">
           <div className="absolute -inset-x-4 -top-8 h-48 hack-hero-glow" />
           <h1 className="font-mono tracking-[0.02em] text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight">
@@ -39,7 +39,7 @@ export default function HackathonPage() {
           <DetailCard
             icon={<UsersIcon />}
             title="Who"
-            text="UoL students only · Teams of 1–3"
+            text="Leeds students only · Teams of 1–3"
           />
           <DetailCard icon={<TicketIcon />} title="Ticket" text="Free" />
         </div>
@@ -47,7 +47,7 @@ export default function HackathonPage() {
 
       {/* THEME */}
       <section
-        id="about"
+        id="theme"
         className="relative max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16"
       >
         <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm">
@@ -149,7 +149,10 @@ export default function HackathonPage() {
       </section>
 
       {/* IDEA STARTERS */}
-      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
+      <section
+        id="ideas"
+        className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10"
+      >
         <h3 className="font-mono text-xl md:text-2xl font-bold">
           Idea starters
         </h3>
@@ -215,7 +218,7 @@ export default function HackathonPage() {
                 Saturday, 11 Oct 2025 · 10:00–20:00
               </h3>
               <p className="mt-2 text-blue-100/80">
-                Helix, EC Stoner · University of Leeds · UoL students only
+                Helix, EC Stoner · University of Leeds · Leeds students only
               </p>
             </div>
             <div className="flex gap-3">
