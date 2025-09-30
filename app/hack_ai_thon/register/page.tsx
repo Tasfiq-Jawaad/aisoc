@@ -64,7 +64,7 @@ export default function HackathonRegisterPage() {
           {/* Primary participant */}
           <div className="space-y-1">
             <h2 className="font-mono text-xl md:text-2xl font-bold">
-              Contestant 1
+              Contestant #1
             </h2>
             <p className="text-blue-200/70 text-sm">
               Use your university email.
@@ -179,7 +179,7 @@ export default function HackathonRegisterPage() {
           {(teamPref === "team_2" || teamPref === "team_3") && (
             <>
               <div className="mt-8 space-y-1">
-                <h3 className="font-mono text-lg font-bold">Contestant 2</h3>
+                <h3 className="font-mono text-lg font-bold">Contestant #2</h3>
                 <p className="text-blue-200/70 text-sm">{teammate1Note}</p>
               </div>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -235,7 +235,7 @@ export default function HackathonRegisterPage() {
           {teamPref === "team_3" && (
             <>
               <div className="mt-8 space-y-1">
-                <h3 className="font-mono text-lg font-bold">Contestant 3</h3>
+                <h3 className="font-mono text-lg font-bold">Contestant #3</h3>
                 <p className="text-blue-200/70 text-sm">{teammate2Note}</p>
               </div>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -286,66 +286,6 @@ export default function HackathonRegisterPage() {
               </div>
             </>
           )}
-
-          {/* Teammates */}
-          <div className="mt-8 space-y-1">
-            <h3 className="font-mono text-lg font-bold">Teammates</h3>
-            <p className="text-blue-200/70 text-sm">
-              Only fill these if you’ve chosen Team of 2 or 3.
-            </p>
-          </div>
-
-          {/* This section is purely visual for now; functionality will be added later. */}
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <div className="flex flex-col gap-2">
-              <label className="text-sm text-blue-200/80">
-                Teammate #1 (optional)
-              </label>
-              <input
-                type="text"
-                name="mate1"
-                placeholder="Jamie Lee"
-                className="hack-input"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-sm text-blue-200/80">
-                Teammate #2 (optional)
-              </label>
-              <input
-                type="text"
-                name="mate2"
-                placeholder="Sam Patel"
-                className="hack-input"
-              />
-            </div>
-          </div>
-
-          {/* Extras */}
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <div className="flex flex-col gap-2">
-              <label className="text-sm text-blue-200/80">
-                Dietary requirements (optional)
-              </label>
-              <input
-                type="text"
-                name="diet"
-                placeholder="Vegetarian / Vegan / Halal / None"
-                className="hack-input"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-sm text-blue-200/80">
-                Accessibility needs (optional)
-              </label>
-              <input
-                type="text"
-                name="access"
-                placeholder="Wheelchair access, captions, etc."
-                className="hack-input"
-              />
-            </div>
-          </div>
 
           {/* Policies */}
           <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4">
