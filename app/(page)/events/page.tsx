@@ -14,6 +14,15 @@ const upcoming = [
     url: "https://engage.luu.org.uk/events/YRD32/talk-to-the-future-i-build-your-first-ai-chatbot",
   },
   {
+    title: "Talk to the Future I: Build Your First AI Chatbot (Rerun - GIAG)",
+    date: "2025-10-01",
+    time: "17:00–18:30",
+    location: "Sir William Bragg SR (GR.18)",
+    badge: "Workshop",
+    image: "/events/Talk to the Future I (rerun).gif",
+    url: "https://engage.luu.org.uk/events/2G8F7/talk-to-the-future-i-build-your-first-ai-chatbot-rerun-giag",
+  },
+  {
     title: "Leeds <hack_ai_thon>",
     date: "2025-10-11",
     time: "10:00-20:00",

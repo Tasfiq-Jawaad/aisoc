@@ -4,28 +4,40 @@ import Link from "next/link";
 export default function LandingWireframeNeon() {
   const upcomingEvent = [
     {
-      title: "Intro to Machine Learning Workshop",
-      date: "2025-10-12",
-      time: "17:00–19:00",
-      location: "EC Stoner, LT B",
+      title: "Talk to the Future I: Build Your First AI Chatbot",
+      date: "2025-09-30",
+      time: "17:00–18:30",
+      location: "Helix, Level 7, EC Stoner building, University of Leeds",
       badge: "Workshop",
-      image: "/placeholder-event-1.jpg",
+      image: "/events/Talk to the Future I.gif",
+      url: "https://engage.luu.org.uk/events/YRD32/talk-to-the-future-i-build-your-first-ai-chatbot",
     },
     {
-      title: "AI Ethics: Panel with Industry & Academia",
-      date: "2025-10-24",
-      time: "18:00–20:00",
-      location: "Roger Stevens, LT 08",
-      badge: "Panel",
-      image: "/placeholder-event-2.jpg",
+      title: "Talk to the Future I: Build Your First AI Chatbot (Rerun - GIAG)",
+      date: "2025-10-01",
+      time: "17:00–18:30",
+      location: "Sir William Bragg SR (GR.18)",
+      badge: "Workshop",
+      image: "/events/Talk to the Future I (rerun).gif",
+      url: "https://engage.luu.org.uk/events/2G8F7/talk-to-the-future-i-build-your-first-ai-chatbot-rerun-giag",
     },
     {
-      title: "Hack the North: AI Mini-Hack",
-      date: "2025-11-08",
-      time: "09:00–21:00",
-      location: "Nexus Building",
+      title: "Leeds <hack_ai_thon>",
+      date: "2025-10-11",
+      time: "10:00-20:00",
+      location: "Helix, Level 7, EC Stoner building, University of Leeds",
       badge: "Hackathon",
-      image: "/placeholder-event-3.jpg",
+      image: "/events/Leeds <hack_ai_thon>.gif",
+      url: "#",
+    },
+    {
+      title: "Talk to the Future II: Power Up Your AI Chatbot",
+      date: "TBA",
+      time: "TBA",
+      location: "Helix, Level 7, EC Stoner building, University of Leeds",
+      badge: "Workshop",
+      image: "/events/Talk to the Future II.gif",
+      url: "#",
     },
   ];
 
@@ -167,7 +179,7 @@ export default function LandingWireframeNeon() {
                   src={e.image}
                   alt={e.title}
                   fill
-                  className="object-cover scale-105 transition-transform duration-500 group-hover:scale-110"
+                  className="object-contain scale-105 transition-transform duration-500 group-hover:scale-110"
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 />
                 <div className="absolute left-3 top-3">
@@ -215,7 +227,7 @@ export default function LandingWireframeNeon() {
                 {/* todo: issue 3 and 4 */}
                 <div className="mt-4 flex items-center justify-between">
                   <Link
-                    href="#"
+                    href={e.url}
                     className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
                   >
                     Details <span aria-hidden>→</span>
