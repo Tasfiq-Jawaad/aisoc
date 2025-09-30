@@ -27,7 +27,8 @@ export default function ContactPage() {
         aria-labelledby="key-contacts"
         className="grid gap-5 sm:grid-cols-2"
       >
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-[color:#eb5b6c0d] to-transparent blur-3xl pointer-events-none" />
+        <div className="relative rounded-2xl border border-white/10 bg-white/5 p-5">
           <h2
             id="key-contacts"
             className="text-white font-semibold text-lg mb-3"
@@ -84,33 +85,70 @@ export default function ContactPage() {
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <h2 className="text-white font-semibold text-lg mb-3">Socials</h2>
-          <ul className="space-y-3 text-sm sm:text-base">
-            <li className="flex items-start gap-3">
-              <IconX />
-              <Link href="#" className="text-gray-300 hover:text-white">
-                X (Twitter)
+          <h2 className="text-white font-semibold text-lg mb-4">Socials</h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              {
+                name: "Instagram",
+                href: "https://instagram.com/leedsaisoc",
+                hint: "Follow",
+                icon: IconInstagram,
+              },
+              {
+                name: "LinkedIn",
+                href: "https://linkedin.com/company/leedsaisoc",
+                hint: "Connect",
+                icon: IconLinkedIn,
+              },
+              {
+                name: "X (Twitter)",
+                href: "https://x.com/LeedsAISoc",
+                hint: "Follow",
+                icon: IconX,
+              },
+              {
+                name: "Youtube",
+                href: "https://youtube.com/@leedsaisoc",
+                hint: "Subscribe",
+                icon: IconYouTube,
+              },
+            ].map((s, i) => (
+              <Link
+                key={i}
+                href={s.href}
+                className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10 transition"
+              >
+                <span className="flex items-center gap-3 text-gray-200">
+                  <s.icon className="h-5 w-5 opacity-90 [color:#eb5b6c]" />
+                  <span className="truncate">{s.name}</span>
+                </span>
+                <span className="text-xs text-gray-400 group-hover:text-white">
+                  {s.hint} →
+                </span>
               </Link>
-            </li>
-            <li className="flex items-start gap-3">
-              <IconInstagram />
-              <Link href="#" className="text-gray-300 hover:text-white">
-                Instagram
-              </Link>
-            </li>
-            <li className="flex items-start gap-3">
-              <IconLinkedIn />
-              <Link href="#" className="text-gray-300 hover:text-white">
-                LinkedIn
-              </Link>
-            </li>
-            <li className="flex items-start gap-3">
-              <IconDiscord />
-              <Link href="#" className="text-gray-300 hover:text-white">
-                WhatsApp
-              </Link>
-            </li>
-          </ul>
+            ))}
+          </div>
+
+          {/* CTA strip */}
+          <div className="mt-4 rounded-xl border border-white/10 bg-white/5 p-3 flex items-center justify-between">
+            <p className="text-xs sm:text-sm text-gray-400">
+              Prefer email? Reach us at{" "}
+              <a
+                href="mailto:committee@leedsaisoc.co.uk"
+                className="text-white hover:opacity-90"
+              >
+                committee@leedsaisoc.co.uk
+              </a>
+              .
+            </p>
+            <Link
+              href="/events"
+              className="hidden sm:inline-flex items-center rounded-lg border [border-color:#eb5b6c66] [background:#eb5b6c1a] [color:#ff909c] hover:[background:#eb5b6c33] px-3 py-1.5 text-xs font-medium transition"
+            >
+              See events
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -120,7 +158,7 @@ export default function ContactPage() {
         <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-0.5 w-24 [background:#eb5b6c80] blur-sm" />
       </div>
 
-      {/* todo: Message form */}
+      {/* todo: Contact form issue 6 */}
       {/* <section className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
         <h2 className="text-white font-semibold text-lg mb-3">
           Send us a message
@@ -287,6 +325,15 @@ function IconDiscord(props: React.SVGProps<SVGSVGElement>) {
       aria-hidden
     >
       <path d="M20.3 4.37A17.4 17.4 0 0 0 15.95 3l-.2.37c2.01.5 3.1 1.22 4.27 2.22a13.3 13.3 0 0 0-9.99 0C10.2 4.59 11.3 3.87 13.3 3.37L13.11 3a17.4 17.4 0 0 0-4.36 1.37C6.35 6.1 5 9.24 5 12.5c0 0 1.16 2 4.24 2.1 0 0 .51-.61.93-1.13-1.77-.52-2.45-1.62-2.45-1.62s.14.1.4.25c.02.01.03.02.05.03.05.03.08.05.08.05.02.01.03.02.05.03.63.35 1.26.6 1.85.77.95.26 2 .36 3.1.36 1.1 0 2.15-.1 3.1-.36.6-.17 1.23-.42 1.86-.77.02-.01.03-.02.05-.03 0 0 .03-.02.08-.05.02-.01.03-.02.05-.03.26-.15.4-.25.4-.25s-.69 1.1-2.46 1.62c.42.52.92 1.13.92 1.13 3.07-.1 4.24-2.1 4.24-2.1 0-3.26-1.36-6.4-3.75-8.13ZM9.7 13.7c-.64 0-1.16-.58-1.16-1.28 0-.71.52-1.28 1.16-1.28.64 0 1.16.57 1.16 1.28 0 .7-.52 1.28-1.16 1.28Zm4.6 0c-.64 0-1.16-.58-1.16-1.28 0-.71.52-1.28 1.16-1.28.64 0 1.16.57 1.16 1.28 0 .7-.52 1.28-1.16 1.28Z" />
+    </svg>
+  );
+}
+
+function IconYouTube(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      {/* Outer shape */}
+      <path d="M23.5 7.2c-.2-1.7-1.4-3-3.1-3.2C18.4 3.7 15 3.7 12 3.7s-6.4 0-8.4.3C1.9 4.2.7 5.6.5 7.2.2 9.2.2 12 .2 12s0 2.8.3 4.8c.2 1.7 1.4 3 3.1 3.2 2 .3 5.4.3 8.4.3s6.4 0 8.4-.3c1.7-.2 2.9-1.5 3.1-3.2.2-2 .3-4.8.3-4.8s-.1-2.8-.3-4.8zM9.8 15.6V8.4L15.6 12l-5.8 3.6z" />
     </svg>
   );
 }
