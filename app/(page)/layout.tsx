@@ -178,22 +178,32 @@ export default function RootLayout({
                 </h5>
                 <ul className="mt-3 space-y-2 text-gray-400 text-sm sm:text-base">
                   <li>
-                    <Link href="#" className="hover:text-white transition">
+                    <Link
+                      href="/events"
+                      className="hover:text-white transition"
+                    >
                       Events
                     </Link>
                   </li>
                   <li className="break-words">
-                    <Link href="#" className="hover:text-white transition">
+                    <Link
+                      href="/hack_ai_thon"
+                      className="hover:text-white transition"
+                    >
                       Leeds &lt;hack_ai_thon&gt;
                     </Link>
                   </li>
-                  <li>
+                  {/* todo: issue 5 */}
+                  {/* <li>
                     <Link href="#" className="hover:text-white transition">
                       Projects
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
-                    <Link href="#" className="hover:text-white transition">
+                    <Link
+                      href="/committee"
+                      className="hover:text-white transition"
+                    >
                       Committee
                     </Link>
                   </li>
@@ -217,12 +227,18 @@ export default function RootLayout({
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-white transition">
+                    <Link
+                      href="/contact"
+                      className="hover:text-white transition"
+                    >
                       Sponsor us
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-white transition">
+                    <Link
+                      href="/membership"
+                      className="hover:text-white transition"
+                    >
                       Join the society
                     </Link>
                   </li>
