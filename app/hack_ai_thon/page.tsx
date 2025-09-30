@@ -7,6 +7,7 @@ import {
   Users,
   Utensils,
 } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import "./hack.css";
 
@@ -370,3 +371,17 @@ function DetailInline({ icon, text }: { icon: React.ReactNode; text: string }) {
 function SeparatorDot() {
   return <span className="mx-1 md:mx-2 text-blue-300/40">·</span>;
 }
+
+export const metadata: Metadata = {
+  title: "Leeds hack_ai_thon | Leeds Artificial Intelligence Society",
+  description:
+    "The Leeds Artificial Intelligence Society presents, the first student-led AI-themed hackathon at the University of Leeds. Unleash your innovation. Build AI‑powered apps to improve how we learn, teach, and support students.",
+  openGraph: {
+    url: "https://www.leedsaisoc.co.uk/hack_ai_thon",
+    siteName: "Leeds hack_ai_thon",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
