@@ -42,9 +42,9 @@ const committee: Member[] = [
 ];
 
 export const metadata = {
-  title: "Leeds AI Society — Committee",
+  title: "Committee | Artificial Intelligence Society",
   description:
-    "Meet the committee of the Leeds Artificial Intelligence Society: roles, photos, and contact emails.",
+    "Meet the committee of the Leeds Artificial Intelligence Society.",
 };
 
 export default function CommitteePage() {
