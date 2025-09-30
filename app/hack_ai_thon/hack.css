@@ -136,3 +136,78 @@
     opacity: 1;
   }
 }
+
+/* Accordion container */
+.hack-accordion {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.9rem;
+  overflow: clip; /* prevents border bleed on open */
+}
+
+/* Header */
+.hack-accordion-summary {
+  list-style: none; /* hide default marker */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  user-select: none;
+}
+.hack-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Icon: + turns into − when open */
+.hack-accordion-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 0.5rem;
+  position: relative;
+  flex: 0 0 auto;
+  background: rgba(120, 170, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.hack-accordion-icon::before,
+.hack-accordion-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: #cfe1ff;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hack-accordion-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg); /* vertical bar */
+}
+
+/* Open state: turn + into − */
+.hack-accordion[open] .hack-accordion-icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Panel */
+.hack-accordion-panel {
+  padding: 0 1.1rem 1rem 1.1rem;
+  color: #dfe7ff;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Hover/focus states */
+.hack-accordion:hover {
+  border-color: rgba(170, 210, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+}
+.hack-accordion-summary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(120, 170, 255, 0.28);
+  border-radius: 0.7rem;
+}
