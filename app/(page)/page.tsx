@@ -147,7 +147,7 @@ export default function LandingWireframeNeon() {
             Upcoming Events
           </h3>
           <Link
-            href="#"
+            href="/events"
             className="text-sm md:text-base [color:#eb5b6c] hover:text-white transition inline-flex items-center gap-2"
           >
             View all <span aria-hidden>→</span>
@@ -212,7 +212,8 @@ export default function LandingWireframeNeon() {
                   </div>
                 </div>
 
-                <div className="mt-4 flex items-center justify-between">
+                {/* todo: issue 3 and 4 */}
+                {/* <div className="mt-4 flex items-center justify-between">
                   <Link
                     href="#"
                     className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
@@ -225,7 +226,7 @@ export default function LandingWireframeNeon() {
                   >
                     RSVP
                   </Link>
-                </div>
+                </div> */}
               </div>
             </article>
           ))}
