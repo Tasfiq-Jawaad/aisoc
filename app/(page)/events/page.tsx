@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -280,3 +281,19 @@ function formatDate(iso: string) {
     return iso;
   }
 }
+
+export const metadata: Metadata = {
+  title: "Events | Artificial Intelligence Society",
+  description:
+    "Explore all events from the Artificial Intelligence Society at the University of Leeds. Find upcoming workshops, talks, panels, hackathons, and socials, plus an archive of past events with details and links.",
+  openGraph: {
+    type: "website",
+    url: "https://www.leedsaisoc.co.uk/events",
+    siteName: "Leeds AI Society",
+    locale: "en_GB",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
