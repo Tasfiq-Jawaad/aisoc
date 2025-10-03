@@ -1,7 +1,6 @@
 import {
   Award,
   Handshake,
-  Laptop,
   Ticket,
   Trophy,
   Users,
@@ -57,10 +56,6 @@ export default function HackathonPage() {
             <DetailInline icon={<TicketIcon />} text="Free to join" />
             <SeparatorDot />
           </div>
-          <DetailInline
-            icon={<Laptop />}
-            text="Access to RTX 4090 laptop during the hackathon"
-          />
         </div>
       </section>
 
@@ -85,9 +80,9 @@ export default function HackathonPage() {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm ">
             <h4 className="font-mono text-lg font-bold">Prizes</h4>
-            <ul className="mt-2 space-y-1 ">
+            <ul className="mt-2 space-y-1 text-blue-100/80">
               <li className="flex items-center gap-2">
                 <span className="hack-icon h-7 w-7">
                   <Trophy className="h-4 w-4" />
@@ -107,7 +102,7 @@ export default function HackathonPage() {
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
             <h4 className="font-mono text-lg font-bold">Perks</h4>
-            <ul className="mt-2 space-y-1 ">
+            <ul className="mt-2 space-y-1 text-blue-100/80">
               <li className="flex items-center gap-2">
                 <span className="hack-icon h-7 w-7">
                   <Ticket className="h-4 w-4" />
