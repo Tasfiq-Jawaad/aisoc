@@ -34,6 +34,10 @@ export default function RootLayout({
       url: "hack_ai_thon#theme",
     },
     {
+      displayName: "Sponsors",
+      url: "hack_ai_thon#sponsors",
+    },
+    {
       displayName: "Ideas",
       url: "hack_ai_thon#ideas",
     },
