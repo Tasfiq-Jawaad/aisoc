@@ -7,6 +7,7 @@ import {
   Utensils,
 } from "lucide-react";
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import "./hack.css";
 
@@ -21,9 +22,24 @@ export default function HackathonPage() {
             <span className="hack-title-dim">Leeds </span>
             <span className="hack-title-accent">{`<hack_ai_thon>`}</span>
           </h1>
+
           <p className="mt-4 text-lg md:text-xl text-blue-200/80 max-w-3xl">
             Unleash your innovation. Build AI‑powered apps to improve how we
             learn, teach, and support students.
+          </p>
+
+          <p className="mt-4 text-lg md:text-xl text-blue-200/80 max-w-3xl">
+            Powered by{" "}
+            <Link target="_blank" href={"https://www.plato.ac/"}>
+              Plato
+            </Link>{" "}
+            &{" "}
+            <Link
+              target="_blank"
+              href={"https://digitaleducation.leeds.ac.uk/"}
+            >
+              Digital Education of University of Leeds
+            </Link>
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -159,6 +175,37 @@ export default function HackathonPage() {
         </div>
       </section>
 
+      {/* SPONSORS */}
+      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
+        <h3 className="font-mono text-xl md:text-2xl font-bold">Powered by</h3>
+        <div className="relative mt-5 grid gap-10 md:gap-16 grid-cols-1 md:grid-cols-2 items-center">
+          {/* Image Column */}
+          <div className="relative w-full aspect-[1898/686]">
+            <Image
+              src="/plato_logo.png"
+              alt="Logo of Plato Academic Ltd"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+
+          {/* Separator Line (only visible on medium screens and up) */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2"></div>
+
+          {/* Text Column */}
+          <div className="relative w-full aspect-[1898/686]">
+            <Image
+              src="/digital_education.png"
+              alt="Logo of Digital Education"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* TRACKS / USE CASES */}
       <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
         <h3 className="font-mono text-xl md:text-2xl font-bold">Build for…</h3>
@@ -264,9 +311,13 @@ export default function HackathonPage() {
 
         <div className="mt-5 space-y-3">
           <FAQItem
-            q="Do I need to know AI?"
-            a="No. Focus on a useful app; use AI where it helps—APIs, no‑code, or your own model."
+            q="Do I need to be an expert in AI?"
+            a="You'll make AI powered application. You can choose to bring your own model, use locally running LLMs, use API or no-code tools. Focus on a useful app; use AI where it helps."
             defaultOpen
+          />
+          <FAQItem
+            q="What are the platform I can build for?"
+            a="Web, mobile, desktop, CLI, embedded, or any other platform. There are no restrictions"
           />
           <FAQItem
             q="Can I come solo?"
