@@ -84,7 +84,7 @@ export default function HackathonPage() {
             <h4 className="font-mono text-lg font-bold">Prizes</h4>
             <ul className="mt-2 space-y-1 text-blue-100/80">
               <li className="flex items-center gap-2">
-                <span className="hack-icon h-7 w-7">
+                <span className="hack-icon aspect-square w-9">
                   <Trophy className="h-4 w-4" />
                 </span>
                 <span>
