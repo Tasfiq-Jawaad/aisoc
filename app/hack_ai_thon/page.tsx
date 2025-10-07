@@ -312,7 +312,7 @@ export default function HackathonPage() {
         <div className="mt-5 space-y-3">
           <FAQItem
             q="Do I need to be an expert in AI?"
-            a="You'll make AI powered application. You can choose to bring your own model, use locally running LLMs, use API or no-code tools. Focus on a useful app; use AI where it helps."
+            a="You'll make AI powered application. You can choose to bring your own model, use locally running LLMs, use API or no-code tools. All skill level welcome. Focus on a useful app; use AI where it helps."
             defaultOpen
           />
           <FAQItem
