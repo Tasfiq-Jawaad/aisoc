@@ -179,7 +179,10 @@ export default function HackathonPage() {
       </section>
 
       {/* SPONSORS */}
-      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
+      <section
+        id="sponsors"
+        className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10"
+      >
         <h3 className="font-mono text-xl md:text-2xl font-bold">Powered by</h3>
         <div className="relative mt-5 grid gap-10 md:gap-16 grid-cols-1 md:grid-cols-2 items-center">
           {/* Image Column */}
@@ -210,7 +213,10 @@ export default function HackathonPage() {
       </section>
 
       {/* TRACKS / USE CASES */}
-      <section className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
+      <section
+        id="ideas"
+        className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10"
+      >
         <h3 className="font-mono text-xl md:text-2xl font-bold">Build for…</h3>
         <div className="mt-5 grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <TrackCard
