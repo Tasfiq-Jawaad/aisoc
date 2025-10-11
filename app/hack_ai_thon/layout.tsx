@@ -26,8 +26,8 @@ export default function RootLayout({
       url: "hack_ai_thon",
     },
     {
-      displayName: "Register",
-      url: "hack_ai_thon/register",
+      displayName: "Check in",
+      url: "hack_ai_thon/check-in",
     },
     {
       displayName: "Theme",
