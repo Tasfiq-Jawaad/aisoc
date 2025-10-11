@@ -1,9 +1,9 @@
-"use client";
-
+import { redirect } from "next/navigation";
 import "../hack.css";
 import "./hack-register.css";
 
 export default function HackathonRegisterPage() {
+  redirect("/hack_ai_thon/check-in");
   return (
     <main className="relative overflow-hidden bg-[#0b1424] text-white">
       {/* Header */}
