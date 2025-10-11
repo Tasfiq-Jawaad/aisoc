@@ -136,6 +136,56 @@ export default function HackathonPage() {
         </div>
       </section>
 
+      <section
+        id="special-category"
+        className="relative max-w-7xl mx-auto px-4 md:px-6 py-0"
+      >
+        <h3 className="font-mono text-xl md:text-2xl font-bold">
+          Special prize category
+        </h3>
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <h4 className="font-mono text-lg font-bold">
+              Most Creative Application of AI (1 team)
+            </h4>
+            <ul className="mt-2 space-y-1 text-blue-100/80">
+              <li className="flex items-center gap-2">
+                <span className="hack-icon aspect-square w-9">
+                  <Trophy className="h-4 w-4" />
+                </span>
+                <span>Cash prizes</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="hack-icon h-7 w-7">
+                  <Award className="h-4 w-4" />
+                </span>
+                <span>Certificates</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm ">
+            <h4 className="font-mono text-lg font-bold">
+              Best Technical Implementation (1 team)
+            </h4>
+            <ul className="mt-2 space-y-1 text-blue-100/80">
+              <li className="flex items-center gap-2">
+                <span className="hack-icon aspect-square w-9">
+                  <Trophy className="h-4 w-4" />
+                </span>
+                <span>Cash prizes</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="hack-icon h-7 w-7">
+                  <Award className="h-4 w-4" />
+                </span>
+                <span>Certificates</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* THEME */}
       <section
         id="theme"
@@ -255,6 +305,34 @@ export default function HackathonPage() {
           combination of above. Pick from example challenges or bring your own
           ideas.
         </p>
+      </section>
+
+      <section
+        id="judging"
+        className="relative max-w-7xl mx-auto px-4 md:px-6 pb-16"
+      >
+        <h3 className="font-mono text-xl md:text-2xl font-bold">
+          Judging criteria
+        </h3>
+
+        <div className="mt-5 space-y-3">
+          <FAQItem
+            q="Impact & Relevance"
+            a="We are looking for projects that solve a significant, real-world problem in education. We will assess your solution's usefulness, practicality, and potential to make a meaningful and scalable impact for its target users."
+          />
+          <FAQItem
+            q="Technical Execution"
+            a="We will assess the quality of your project's build and execution. We want to see a functional prototype, sophisticated use of AI, and effective implementation of technology. Your code's quality and robustness are key."
+          />
+          <FAQItem
+            q="Innovation & Creativity"
+            a="We will evaluate the originality and creativity of your solution. We are looking for novel ideas, unique approaches to the problem, and a high-quality user experience. A well-designed, intuitive interface is something we highly value."
+          />
+          <FAQItem
+            q="Strategic Application of AI"
+            a="This assesses how cleverly AI is applied as a core, value-adding component of your solution. We value the purpose and intelligence of the AI's integration over the raw performance of any specific model."
+          />
+        </div>
       </section>
 
       {/* AI EXPECTATIONS */}
