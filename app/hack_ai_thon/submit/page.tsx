@@ -1,20 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { useActionState } from "react";
 import "../hack.css";
 import "../register/hack-register.css";
-import { submitCheckin } from "../register/submit";
+import { submitRepo } from "../register/submit";
 
 type State = { error?: string; success?: string };
 
 export default function HackathonCheckinPage() {
-  redirect("/hack_ai_thon/submit");
-
   const [state, action, pending] = useActionState<State, FormData>(
     async (_prev, fd) => {
-      const result = await submitCheckin(fd);
+      const result = await submitRepo(fd);
       if (result.ok) {
         return { success: result.message };
       }
@@ -28,16 +25,14 @@ export default function HackathonCheckinPage() {
       {/* Header */}
       <section className="relative max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-10">
         <h1 className="font-mono tracking-[0.02em] text-3xl md:text-5xl font-extrabold leading-tight">
-          <span className="hack-title-dim">Check in</span>
+          <span className="hack-title-dim">
+            Submit your GitHub repository link
+          </span>
           <br />
-          <span className="hack-title-dim">Leeds</span>
-          <span className="hack-title-accent">{` <hack_ai_thon>`}</span>
         </h1>
-        <p className="mt-3 text-blue-200/80">Each participant must check in.</p>
-        {/* Event summary */}
-        <div className="mt-4 text-blue-200/70">
-          Check in starts: 10:00 am 11/10/2025
-        </div>
+        <p className="mt-3 text-blue-200/80">
+          Only one team member needs to submit.
+        </p>
       </section>
 
       {/* Form */}
@@ -70,13 +65,38 @@ export default function HackathonCheckinPage() {
             <button></button>
           </div>
 
+          <div className="space-y-1">
+            <h2 className="font-mono text-xl md:text-2xl font-bold">
+              Github link
+            </h2>
+            <p className="text-blue-200/70 text-sm">
+              Please provide a link to your github repository
+            </p>
+          </div>
+
+          <div className="mt-4">
+            <div className="flex flex-col gap-2">
+              <label className="text-sm text-blue-200/80">GitHub Link</label>
+              <input
+                type="url"
+                name="link"
+                placeholder="e.g., github.com/repo"
+                className="hack-input"
+                inputMode="url"
+                autoComplete="link"
+                required
+              />
+            </div>
+            <button></button>
+          </div>
+
           {/* Actions */}
           <div className="mt-1">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button type="submit" className="hack-cta" disabled={pending}>
                 <span className="hack-cta-glow" aria-hidden />
                 <span className="hack-cta-label">
-                  {pending ? "Checking in…" : "Check in"}
+                  {pending ? "Submitting…" : "Submit"}
                 </span>
               </button>
 

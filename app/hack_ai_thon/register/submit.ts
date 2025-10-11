@@ -183,3 +183,55 @@ export async function submitCheckin(
     };
   }
 }
+
+export async function submitRepo(formData: FormData): Promise<CheckinResult> {
+  try {
+    const supabase = await createClient();
+
+    const student_email = (formData.get("email") as string)
+      ?.trim()
+      .toLowerCase();
+
+    const repo_link = (formData.get("link") as string)?.trim().toLowerCase();
+
+    // Validation
+    if (!student_email) {
+      return {
+        ok: false,
+        message: "Please enter your email.",
+      };
+    }
+    if (!repo_link) {
+      return {
+        ok: false,
+        message: "Please enter your repo link.",
+      };
+    }
+
+    const { data, error } = await supabase
+      .from("contestants")
+      .update({ repo_link: repo_link })
+      .eq("student_email", student_email)
+      .select()
+      .single();
+
+    if (error || !data) {
+      console.log(error);
+      return {
+        ok: false,
+        message:
+          "Could not find your email. Please make sure you enter the email you used to register.",
+      };
+    }
+
+    return {
+      ok: true,
+      message: "Your response is saved!",
+    };
+  } catch (e) {
+    return {
+      ok: false,
+      message: "Unexpected error. Please try again.",
+    };
+  }
+}

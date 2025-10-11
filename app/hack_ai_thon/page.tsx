@@ -43,8 +43,8 @@ export default function HackathonPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/hack_ai_thon/register" className="hack-btn-primary">
-              Check in
+            <Link href="/hack_ai_thon/submit" className="hack-btn-primary">
+              Submit
             </Link>
             <a href="#theme" className="hack-btn-ghost">
               Learn more
@@ -381,8 +381,8 @@ export default function HackathonPage() {
               </p>
             </div>
             <div className="flex gap-3">
-              <Link href="/hack_ai_thon/check-in" className="hack-btn-primary">
-                Check in
+              <Link href="/hack_ai_thon/submit" className="hack-btn-primary">
+                Submit
               </Link>
             </div>
           </div>
