@@ -4,10 +4,29 @@ import Link from "next/link";
 export default function LandingWireframeNeon() {
   const upcomingEvent = [
     {
+      title: "AI On Your Own Device: Running AI Models Locally!",
+      date: "2025-11-05",
+      time: "16:00-18:00",
+      location: "Sir William Henry Bragg (GR.18)",
+      badge: "Workshop",
+      image: "/events/AI On Your Own Device.png",
+      url: "https://engage.luu.org.uk/events/3R4HB/ai-on-your-own-device-running-ai-models-locally",
+    },
+    {
+      title:
+        "Unlocking AI's Superpowers: An Introduction to Tool Calling & MCP",
+      date: "2025-11-12",
+      time: "16:00-18:00",
+      location: "Sir William Henry Bragg (GR.18)",
+      badge: "Workshop",
+      image: "/events/Unlocking AI's Superpowers.png",
+      url: "https://engage.luu.org.uk/events/XKFYX/unlocking-ais-superpowers-an-introduction-to-tool-calling-mcp",
+    },
+    {
       title: "Talk to the Future II: Power Up Your AI Chatbot",
-      date: "TBA",
-      time: "TBA",
-      location: "Helix, Level 7, EC Stoner building, University of Leeds",
+      date: "2025-11-19",
+      time: "16:00-18:00",
+      location: "Sir William Henry Bragg (GR.18)",
       badge: "Workshop",
       image: "/events/Talk to the Future II.gif",
     },
