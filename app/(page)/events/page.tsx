@@ -5,13 +5,24 @@ import Link from "next/link";
 // Placeholder data.
 const upcoming = [
   {
-    title: "Talk to the Future I: Build Your First AI Chatbot",
-    date: "2025-09-30",
-    time: "17:00–18:30",
+    title: "Talk to the Future II: Power Up Your AI Chatbot",
+    date: "TBA",
+    time: "TBA",
     location: "Helix, Level 7, EC Stoner building, University of Leeds",
     badge: "Workshop",
-    image: "/events/Talk to the Future I.gif",
-    url: "https://engage.luu.org.uk/events/YRD32/talk-to-the-future-i-build-your-first-ai-chatbot",
+    image: "/events/Talk to the Future II.gif",
+  },
+];
+
+const past = [
+  {
+    title: "Leeds <hack_ai_thon>",
+    date: "2025-10-11",
+    time: "10:00-20:00",
+    location: "Helix, Level 7, EC Stoner building, University of Leeds",
+    badge: "Hackathon",
+    image: "/events/Leeds <hack_ai_thon>.gif",
+    url: "#",
   },
   {
     title: "Talk to the Future I: Build Your First AI Chatbot (Rerun - GIAG)",
@@ -23,26 +34,15 @@ const upcoming = [
     url: "https://engage.luu.org.uk/events/2G8F7/talk-to-the-future-i-build-your-first-ai-chatbot-rerun-giag",
   },
   {
-    title: "Leeds <hack_ai_thon>",
-    date: "2025-10-11",
-    time: "10:00-20:00",
-    location: "Helix, Level 7, EC Stoner building, University of Leeds",
-    badge: "Hackathon",
-    image: "/events/Leeds <hack_ai_thon>.gif",
-    url: "#",
-  },
-  {
-    title: "Talk to the Future II: Power Up Your AI Chatbot",
-    date: "TBA",
-    time: "TBA",
+    title: "Talk to the Future I: Build Your First AI Chatbot",
+    date: "2025-09-30",
+    time: "17:00–18:30",
     location: "Helix, Level 7, EC Stoner building, University of Leeds",
     badge: "Workshop",
-    image: "/events/Talk to the Future II.gif",
-    url: "#",
+    image: "/events/Talk to the Future I.gif",
+    url: "https://engage.luu.org.uk/events/YRD32/talk-to-the-future-i-build-your-first-ai-chatbot",
   },
-];
 
-const past = [
   {
     title: "Weekly AI Journal Club",
     date: "Last: 30 Jul 2025",
@@ -263,7 +263,7 @@ type EventItem = {
   location: string;
   badge: string;
   image: string;
-  url: string;
+  url?: string;
 };
 
 function EventGrid({
@@ -369,16 +369,28 @@ function EventGrid({
             </div>
 
             <div className="mt-4 flex items-center justify-between">
-              <Link
-                href={e.url}
-                className={`text-sm font-medium inline-flex items-center gap-2 transition ${
-                  isPast
-                    ? "text-gray-400 hover:text-white"
-                    : "[color:#eb5b6c] hover:text-white"
-                }`}
-              >
-                Details <span aria-hidden>→</span>
-              </Link>
+              {e?.url ? (
+                <Link
+                  href={e.url}
+                  className={`text-sm font-medium inline-flex items-center gap-2 transition ${
+                    isPast
+                      ? "text-gray-400 hover:text-white"
+                      : "[color:#eb5b6c] hover:text-white"
+                  }`}
+                >
+                  Details <span aria-hidden>→</span>
+                </Link>
+              ) : (
+                <p
+                  className={`text-sm font-medium inline-flex items-center gap-2 transition ${
+                    isPast
+                      ? "text-gray-400 hover:text-white"
+                      : "[color:#eb5b6c] hover:text-white"
+                  }`}
+                >
+                  More details soon
+                </p>
+              )}
 
               {/* {isPast ? (
                 <span className="text-xs text-gray-500">Ended</span>
