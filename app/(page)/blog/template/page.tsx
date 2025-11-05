@@ -173,22 +173,22 @@ const CodeBlock = ({
   );
 };
 
-const OSCard = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) => (
-  <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-    <div className="text-sm font-semibold text-gray-300">{title}</div>
-    <div className="mt-2 text-gray-300">{children}</div>
-  </div>
-);
+// const OSCard = ({
+//   title,
+//   children,
+// }: {
+//   title: string;
+//   children: React.ReactNode;
+// }) => (
+//   <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+//     <div className="text-sm font-semibold text-gray-300">{title}</div>
+//     <div className="mt-2 text-gray-300">{children}</div>
+//   </div>
+// );
 
-const OSStack = ({ children }: { children: React.ReactNode }) => (
-  <div className="mt-4 space-y-4">{children}</div>
-);
+// const OSStack = ({ children }: { children: React.ReactNode }) => (
+//   <div className="mt-4 space-y-4">{children}</div>
+// );
 
 export default function page() {
   const AUTHOR_NAME = "Author";
