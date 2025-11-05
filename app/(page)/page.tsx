@@ -11,6 +11,7 @@ export default function LandingWireframeNeon() {
       badge: "Workshop",
       image: "/events/AI On Your Own Device.png",
       url: "https://engage.luu.org.uk/events/3R4HB/ai-on-your-own-device-running-ai-models-locally",
+      blog_url: "https://www.leedsaisoc.co.uk/blog/local-ai",
     },
     {
       title:
@@ -228,6 +229,15 @@ export default function LandingWireframeNeon() {
                     <p className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2">
                       More details soon
                     </p>
+                  )}
+
+                  {e.blog_url && (
+                    <Link
+                      href={e.blog_url}
+                      className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
+                    >
+                      Blog <span aria-hidden>→</span>
+                    </Link>
                   )}
 
                   {/* <Link
