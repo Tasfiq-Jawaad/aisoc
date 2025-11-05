@@ -58,6 +58,45 @@ export default function page() {
 
         <div className="mt-3 h-1 w-24 rounded-full [background:#eb5b6c99]" />
       </section>
+
+      {/* Table of contents */}
+      <section
+        aria-labelledby="toc-heading"
+        className="relative mb-8 md:mb-12 rounded-lg border border-white/10 bg-white/[0.03] p-4"
+      >
+        <h2
+          id="toc-heading"
+          className="text-sm font-semibold uppercase tracking-wide text-gray-300"
+        >
+          On this page
+        </h2>
+        <ol className="mt-3 space-y-2 text-gray-400" type="1">
+          <li>
+            <Link
+              className="[color:#eb5b6c] hover:text-white transition"
+              href="#"
+            >
+              1. First topic
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="[color:#eb5b6c] hover:text-white transition"
+              href="#"
+            >
+              2. Second topic
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="[color:#eb5b6c] hover:text-white transition"
+              href="#"
+            >
+              3. Third topic
+            </Link>
+          </li>
+        </ol>
+      </section>
     </main>
   );
 }
