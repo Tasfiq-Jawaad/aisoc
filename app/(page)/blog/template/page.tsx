@@ -141,6 +141,7 @@ const CodeBlock = ({
       ? children.join("")
       : isValidElement(children)
       ? // if wrapped in a single text node / element, attempt to get string
+        // @typescript-eslint/no-explicit-any
         (children as any)?.props?.children ?? ""
       : "";
 
