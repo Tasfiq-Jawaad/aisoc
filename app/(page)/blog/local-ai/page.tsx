@@ -140,8 +140,22 @@ const CodeBlock = ({
       : Array.isArray(children)
       ? children.join("")
       : isValidElement(children)
-      ? // if wrapped in a single text node / element, attempt to get string
-        (children as any)?.props?.children ?? ""
+      ? (() => {
+          const c = children as unknown;
+          // Narrow: React elements have props
+          if (
+            typeof c === "object" &&
+            c !== null &&
+            "props" in c &&
+            typeof (c as { props?: unknown }).props === "object" &&
+            (c as { props?: { children?: unknown } }).props !== null
+          ) {
+            const maybeChildren = (c as { props: { children?: unknown } }).props
+              .children;
+            return typeof maybeChildren === "string" ? maybeChildren : "";
+          }
+          return "";
+        })()
       : "";
 
   const handleCopy = async () => {
