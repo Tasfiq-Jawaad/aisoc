@@ -1,5 +1,56 @@
 import Link from "next/link";
 
+const Section = ({
+  title,
+  subtitle,
+  id,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  id: string;
+  children: React.ReactNode;
+}) => (
+  <section id={id} className="relative mb-8 md:mb-12">
+    <div className="flex items-baseline justify-between gap-3">
+      <h2 className="text-xl md:text-3xl font-extrabold tracking-tight text-white">
+        {title}
+      </h2>
+      {subtitle ? (
+        <p className="text-sm md:text-base text-gray-400">{subtitle}</p>
+      ) : null}
+    </div>
+    <div className="mt-5 text-gray-300 leading-relaxed">{children}</div>
+  </section>
+);
+
+const SubSection = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <div className="mt-8">
+    <h3 className="text-lg md:text-xl font-semibold text-white">{title}</h3>
+    <div className="mt-3 space-y-3 text-gray-300">{children}</div>
+  </div>
+);
+
+const InlineCode = ({ children }: { children: React.ReactNode }) => (
+  <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-[0.95em] text-gray-100">
+    {children}
+  </code>
+);
+
+const List = ({ items }: { items: React.ReactNode[] }) => (
+  <ul className="list-disc pl-5 space-y-2 text-gray-300">
+    {items.map((li, i) => (
+      <li key={i}>{li}</li>
+    ))}
+  </ul>
+);
+
 export default function page() {
   const AUTHOR_NAME = "Author";
   const AUTHOR_LINKEDIN = "https://www.linkedin.com/in/author-details-go-here";
@@ -74,7 +125,7 @@ export default function page() {
           <li>
             <Link
               className="[color:#eb5b6c] hover:text-white transition"
-              href="#"
+              href="#first"
             >
               1. First topic
             </Link>
@@ -97,6 +148,25 @@ export default function page() {
           </li>
         </ol>
       </section>
+
+      <Section id="first" title="First topic">
+        <SubSection title="first_topic first_subsection">
+          <p>This is an example of a paragraph</p>
+          <List
+            items={[
+              <>This is an example of a list</>,
+              <>This is an example of a list</>,
+              <>This is an example of a list</>,
+            ]}
+          />
+        </SubSection>
+
+        <SubSection title="first_topic first_subsection">
+          <p className="text-gray-400">
+            This is an example of <InlineCode>inline code</InlineCode>
+          </p>
+        </SubSection>
+      </Section>
     </main>
   );
 }
