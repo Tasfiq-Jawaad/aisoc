@@ -4,14 +4,13 @@ import Link from "next/link";
 export default function LandingWireframeNeon() {
   const upcomingEvent = [
     {
-      title: "AI On Your Own Device: Running AI Models Locally!",
-      date: "2025-11-05",
-      time: "16:00-18:00",
+      title: "Next Level: An Introduction to Agentic AI",
+      date: "2025-11-10",
+      time: "18:30-19:30",
       location: "Sir William Henry Bragg (GR.18)",
       badge: "Workshop",
-      image: "/events/AI On Your Own Device.png",
-      url: "https://engage.luu.org.uk/events/3R4HB/ai-on-your-own-device-running-ai-models-locally",
-      blog_url: "https://www.leedsaisoc.co.uk/blog/local-ai",
+      image: "/events/Agentic AI.png",
+      url: "https://engage.luu.org.uk/events/KYQ32/next-level-an-introduction-to-agentic-ai",
     },
     {
       title:
@@ -229,15 +228,6 @@ export default function LandingWireframeNeon() {
                     <p className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2">
                       More details soon
                     </p>
-                  )}
-
-                  {e.blog_url && (
-                    <Link
-                      href={e.blog_url}
-                      className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
-                    >
-                      Blog <span aria-hidden>→</span>
-                    </Link>
                   )}
 
                   {/* <Link
