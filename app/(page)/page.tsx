@@ -11,6 +11,7 @@ export default function LandingWireframeNeon() {
       badge: "Workshop",
       image: "/events/talk_to_the_future_II.png",
       url: "https://engage.luu.org.uk/events/8J6TM/talk-to-the-future-ii-make-an-ai-chatbot-with-local-ai",
+      blog_url: `${process.env.NEXT_PUBLIC_URL}/blog/ollama-local-ai-introduction`,
     },
   ];
 
@@ -210,6 +211,15 @@ export default function LandingWireframeNeon() {
                     <p className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2">
                       More details soon
                     </p>
+                  )}
+
+                  {e?.blog_url && (
+                    <Link
+                      href={e?.blog_url}
+                      className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
+                    >
+                      Blog <span aria-hidden>→</span>
+                    </Link>
                   )}
 
                   {/* <Link
