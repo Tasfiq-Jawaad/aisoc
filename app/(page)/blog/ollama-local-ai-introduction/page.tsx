@@ -224,7 +224,7 @@ export default function page() {
         <p className="mt-3 text-gray-400 text-base md:text-lg max-w-2xl">
           Explore Ollama: a comprehensive guide detailing installation,
           fundamental CLI commands, API usage, and a practical API demonstration
-          for building chatbots, emphasizing local AI's capabilities and
+          for building chatbots, emphasizing local AI&apos;s capabilities and
           privacy.
         </p>
 
@@ -316,8 +316,8 @@ export default function page() {
         The Ollama Command Line Interface (CLI) is the primary way to interact
         with the framework.
         <SubSection title="Accessing the CLI">
-          After installation, you can interact with Ollama through your system's
-          command line interface.
+          After installation, you can interact with Ollama through your
+          system&apos;s command line interface.
           <OSStack>
             <OSCard title="Windows">
               Open the Command Prompt or PowerShell. You can find these by
@@ -329,9 +329,9 @@ export default function page() {
             </OSCard>
             <OSCard title="Linux">
               <p>
-                If you're using Linux, you should already know how to open your
-                terminal. You can enable and start Ollama as a systemd service
-                for automatic startup and background operation.
+                If you&apos;re using Linux, you should already know how to open
+                your terminal. You can enable and start Ollama as a systemd
+                service for automatic startup and background operation.
               </p>
               <CodeBlock language="bash">
                 sudo systemctl enable ollama --now
@@ -350,8 +350,8 @@ export default function page() {
         </SubSection>
         <SubSection title="Pulling a Model">
           Before you can use a model, you need to download it from the Ollama
-          library. Let's pull <InlineCode>phi</InlineCode>, a good small model
-          for getting started.
+          library. Let&apos;s pull <InlineCode>phi</InlineCode>, a good small
+          model for getting started.
           <CodeBlock language="bash">ollama pull phi</CodeBlock>
           <p className="mt-3">
             You can find a list of available models on the official website of
@@ -439,10 +439,11 @@ export default function page() {
       <Divider />
 
       <Section id="ollama-modelfile" title="Customising Models with Modelfile">
-        Ollama's most significant capability lies in the ability to customize
-        and create your own models using a <InlineCode>Modelfile</InlineCode>. A
-        Modelfile is essentially a blueprint that defines how a model should be
-        built or modified, allowing for significant flexibility.
+        Ollama&apos;s most significant capability lies in the ability to
+        customize and create your own models using a{" "}
+        <InlineCode>Modelfile</InlineCode>. A Modelfile is essentially a
+        blueprint that defines how a model should be built or modified, allowing
+        for significant flexibility.
         <SubSection title={"Modelfile Basics"}>
           A <InlineCode>Modelfile</InlineCode> is a simple text file, similar to
           a <InlineCode>Dockerfile</InlineCode>, that uses a set of instructions
@@ -481,7 +482,7 @@ export default function page() {
       </Section>
 
       <p>
-        I'll be delivering an{" "}
+        I&apos;ll be delivering an{" "}
         <Link
           className="text-[#eb5b6c] hover:text-white"
           href={`${process.env.NEXT_PUBLIC_URL}/event-instruction/ollama-local-ai-introduction`}

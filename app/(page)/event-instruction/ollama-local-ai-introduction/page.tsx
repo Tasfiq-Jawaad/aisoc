@@ -217,8 +217,8 @@ export default function page() {
         </h1>
         <p className="mt-3 text-gray-400 text-base md:text-lg max-w-2xl">
           Welcome to the workshop! This guide is your companion document,
-          containing all the key commands, code snippets, and links you'll need
-          to follow along.
+          containing all the key commands, code snippets, and links you&apos;ll
+          need to follow along.
         </p>
 
         <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-gray-400">
@@ -265,17 +265,18 @@ export default function page() {
         <List
           items={[
             <>
-              <b>Terminal:</b> On macOS and Linux, you'll use the "Terminal"
-              application. On Windows, we recommend using "Windows Terminal"
-              with either a PowerShell or Command Prompt shell.
+              <b>Terminal:</b> On macOS and Linux, you&apos;ll use the
+              &quot;Terminal&quot; application. On Windows, we recommend using
+              &quot;Windows Terminal&quot; with either a PowerShell or Command
+              Prompt shell.
             </>,
             <>
               <b>
                 <InlineCode>curl</InlineCode>:
               </b>{" "}
               This command-line tool is essential for interacting with APIs. We
-              will cover its installation during the session, so there's no need
-              to install it beforehand.
+              will cover its installation during the session, so there&apos;s no
+              need to install it beforehand.
             </>,
             <>
               <b>
@@ -283,9 +284,9 @@ export default function page() {
               </b>{" "}
               <InlineCode>curl</InlineCode> is included with macOS and most
               Linux distributions. Modern versions of Windows 10/11 also include
-              it. If the <InlineCode>curl</InlineCode> command doesn't work, it
-              might not be installed or in your system's PATH. You can easily
-              get it by installing{" "}
+              it. If the <InlineCode>curl</InlineCode> command doesn&apos;t
+              work, it might not be installed or in your system&apos;s PATH. You
+              can easily get it by installing{" "}
               <Link
                 href="https://git-scm.com/download/win"
                 className="text-[#eb5b6c] hover:text-white"
@@ -318,8 +319,8 @@ export default function page() {
             <>
               <b>REST API:</b> A standardised way for software to communicate.
               Think of it like a waiter taking your request to the kitchen (the
-              server) and bringing back a response. We'll use this to let our
-              web app talk to Ollama.
+              server) and bringing back a response. We&apos;ll use this to let
+              our web app talk to Ollama.
             </>,
           ]}
         />
@@ -372,7 +373,9 @@ export default function page() {
               <CodeBlock language="bash">
                 {"sudo systemctl status ollama"}
               </CodeBlock>
-              <p className="mt-3">If it's not active, you can start it with:</p>
+              <p className="mt-3">
+                If it&apos;s not active, you can start it with:
+              </p>
               <CodeBlock language="bash">
                 {"sudo systemctl start ollama"}
               </CodeBlock>
@@ -424,9 +427,10 @@ export default function page() {
           </p>
           <p>
             <i>
-              (**Windows Tip:** In File Explorer, you may need to select "View"
-              and check "File name extensions" to ensure you can create a file
-              without a <InlineCode>.txt</InlineCode> extension.)
+              (**Windows Tip:** In File Explorer, you may need to select
+              &quot;View&quot; and check &quot;File name extensions&quot; to
+              ensure you can create a file without a{" "}
+              <InlineCode>.txt</InlineCode> extension.)
             </i>
           </p>
           <CodeBlock>{`FROM phi:latest
