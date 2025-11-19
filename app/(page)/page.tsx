@@ -4,31 +4,13 @@ import Link from "next/link";
 export default function LandingWireframeNeon() {
   const upcomingEvent = [
     {
-      title: "Next Level: An Introduction to Agentic AI",
-      date: "2025-11-10",
-      time: "18:30-19:30",
-      location: "Sir William Henry Bragg (GR.18)",
-      badge: "Workshop",
-      image: "/events/Agentic AI.png",
-      url: "https://engage.luu.org.uk/events/KYQ32/next-level-an-introduction-to-agentic-ai",
-    },
-    {
-      title:
-        "Unlocking AI's Superpowers: An Introduction to Tool Calling & MCP",
-      date: "2025-11-12",
-      time: "16:00-18:00",
-      location: "Sir William Henry Bragg (GR.18)",
-      badge: "Workshop",
-      image: "/events/Unlocking AI's Superpowers.png",
-      url: "https://engage.luu.org.uk/events/XKFYX/unlocking-ais-superpowers-an-introduction-to-tool-calling-mcp",
-    },
-    {
-      title: "Talk to the Future II: Power Up Your AI Chatbot",
+      title: "Talk to the Future II: Make an AI chatbot with local AI",
       date: "2025-11-19",
       time: "16:00-18:00",
-      location: "Sir William Henry Bragg (GR.18)",
+      location: "Baines Wing seminar room 2.10",
       badge: "Workshop",
-      image: "/events/Talk to the Future II.gif",
+      image: "/events/talk_to_the_future_II.png",
+      url: "https://engage.luu.org.uk/events/8J6TM/talk-to-the-future-ii-make-an-ai-chatbot-with-local-ai",
     },
   ];
 
