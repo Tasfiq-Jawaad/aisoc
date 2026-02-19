@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Placeholder data.
-const upcoming = [
+const upcoming = [] as EventItem[];
+
+const past = [
   {
     title: "Talk to the Future II: Make an AI chatbot with local AI",
     date: "2025-11-19",
@@ -13,9 +15,6 @@ const upcoming = [
     image: "/events/talk_to_the_future_II.png",
     url: "https://engage.luu.org.uk/events/8J6TM/talk-to-the-future-ii-make-an-ai-chatbot-with-local-ai",
   },
-];
-
-const past = [
   {
     title: "Unlocking AI's Superpowers: An Introduction to Tool Calling & MCP",
     date: "2025-11-12",
@@ -286,7 +285,7 @@ export default function EventsPage() {
   );
 }
 
-type EventItem = {
+export type EventItem = {
   title: string;
   date: string; // ISO
   time: string;
