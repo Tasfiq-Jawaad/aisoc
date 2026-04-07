@@ -313,8 +313,8 @@ export default function AIInTheBoxHackathon() {
         >
           <div className="mb-8 inline-flex items-center gap-3 px-5 py-2 rounded-full border border-emerald-500/20 bg-emerald-950/30 backdrop-blur-sm">
             <Terminal size={14} className="text-emerald-400" />
-            <span className="font-mono text-emerald-400 tracking-widest uppercase">
-              // HACKATHON_2026
+            <span className="font-mono text-sm text-emerald-400 tracking-widest uppercase">
+              {"// HACKATHON_2026"}
             </span>
           </div>
 
@@ -402,7 +402,7 @@ export default function AIInTheBoxHackathon() {
               <Globe className="text-emerald-400 w-10 h-10 mb-6" />
               <h3 className="text-xl font-bold mb-3">Network & Learn</h3>
               <p className="text-emerald-100/60 text-sm leading-relaxed">
-                You won't be building in isolation. Connect with industry
+                You won&apos;t be building in isolation. Connect with industry
                 experts, technical mentors, and fellow student developers
                 throughout the entirety of the event.
               </p>
