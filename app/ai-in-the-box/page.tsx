@@ -224,28 +224,13 @@ export default function AIInTheBoxHackathon() {
   const navLinks = [
     {
       displayName: "Overview",
-      url: "hack_ai_thon",
-    },
-    {
-      displayName: "Submit",
-      url: "hack_ai_thon/submit",
-    },
-    {
-      displayName: "Theme",
-      url: "hack_ai_thon#theme",
+      url: "ai-in-the-box#overview",
     },
     {
       displayName: "Sponsors",
-      url: "hack_ai_thon#sponsors",
+      url: "ai-in-the-box#sponsors",
     },
-    {
-      displayName: "Ideas",
-      url: "hack_ai_thon#ideas",
-    },
-    {
-      displayName: "Faq",
-      url: "hack_ai_thon#faq",
-    },
+
     {
       displayName: "Contact",
       url: "contact",
@@ -263,6 +248,7 @@ export default function AIInTheBoxHackathon() {
 
       {/* HERO SECTION */}
       <section
+        id="overview"
         ref={heroRef}
         className="min-h-dvh flex flex-col items-center justify-center relative px-4 pb-12"
       >
@@ -339,7 +325,7 @@ export default function AIInTheBoxHackathon() {
             </span>
           </h1>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-emerald-100/70 font-mono tracking-wide uppercase text-sm md:text-base mt-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-emerald-100/70 font-mono tracking-wide uppercase text-base md:text-lg mt-8">
             <div className="flex items-center gap-3">
               <Calendar className="text-emerald-400" size={18} />
               <span>2–3 May 2026</span>
@@ -353,7 +339,11 @@ export default function AIInTheBoxHackathon() {
 
           <CountdownTimer />
 
-          <Link href="/register" className="inline-block mt-4">
+          <Link
+            href="https://www.universe.com/events/hackathon-ai-in-the-box-tickets-TQ2YC7"
+            className="inline-block mt-4"
+            target="_blank"
+          >
             <button className="group relative flex items-center gap-4 px-8 py-5 rounded-full bg-emerald-500 text-emerald-950 font-bold uppercase tracking-wider overflow-hidden transition-transform hover:scale-105 active:scale-95">
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10">Secure Your Spot</span>
@@ -371,36 +361,38 @@ export default function AIInTheBoxHackathon() {
         <div
           className={`max-w-6xl mx-auto reveal-base ${aboutVisible ? "reveal-active" : ""}`}
         >
-          <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="text-center mb-16 max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-black mb-6">
               Step into the future.
             </h2>
-            <p className="text-lg text-emerald-100/70 leading-relaxed">
-              Unleash your creativity at AI in the Box. This immersive 24-hour
-              hackathon challenges you to design, build, and showcase innovative
-              artificial intelligence applications from the ground up. Whether
-              you are developing smart assistants, predictive models, or
-              generative AI tools, this is your opportunity to bring your
-              boldest ideas to life.
+            <p className="text-lg md:text-2xl text-emerald-100/70 leading-relaxed">
+              Unleash your creativity at Hackathon: AI in the Box. This
+              immersive 24-hour hackathon challenges you to design, build, and
+              showcase innovative artificial intelligence applications from the
+              ground up. Whether you are developing smart assistants, predictive
+              models, or generative AI tools, this is your opportunity to bring
+              your boldest ideas to life.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-emerald-950/30 border border-emerald-500/20 rounded-2xl p-8 backdrop-blur-sm hover:bg-emerald-900/40 transition-colors">
               <TerminalSquare className="text-emerald-400 w-10 h-10 mb-6" />
-              <h3 className="text-xl font-bold mb-3">Build Cutting-Edge AI</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Build Cutting-Edge AI projects
+              </h3>
               <p className="text-emerald-100/60 text-sm leading-relaxed">
-                Work collaboratively to create functional, AI-driven
-                applications. Solve real-world problems and demo a complete
-                project built entirely from scratch in just 24 hours.
+                Create functional, AI-driven applications. Solve real-world
+                problems and demo a complete project built entirely from scratch
+                in just 24 hours.
               </p>
             </div>
 
             <div className="bg-emerald-950/30 border border-emerald-500/20 rounded-2xl p-8 backdrop-blur-sm hover:bg-emerald-900/40 transition-colors">
               <Users className="text-emerald-400 w-10 h-10 mb-6" />
-              <h3 className="text-xl font-bold mb-3">Teams of Four</h3>
+              <h3 className="text-xl font-bold mb-3">Teams of 1-4</h3>
               <p className="text-emerald-100/60 text-sm leading-relaxed">
-                Hack alone or form squads of up to 4 members. Bring your own
+                Hack alone or form a team of up to 4 members. Bring your own
                 team, or meet fellow tech enthusiasts and form a new team on the
                 day of the event.
               </p>
@@ -498,20 +490,19 @@ export default function AIInTheBoxHackathon() {
             <div className="p-6 md:p-10 font-mono text-sm md:text-base space-y-6">
               <div className="space-y-2">
                 <p className="text-emerald-500/70">~ $ ./check_eligibility</p>
-                <p className="text-emerald-100 flex items-start gap-3">
+                <p className="text-emerald-100 flex items-start gap-3 mb-10">
                   <CheckCircle2 className="text-emerald-400 shrink-0 w-5 h-5 mt-0.5" />
                   <span>
                     <strong className="text-emerald-300">
                       Open to all university students.
-                    </strong>{" "}
-                    Valid university ID required on the day.
+                    </strong>
                   </span>
                 </p>
               </div>
 
               <div className="space-y-2">
                 <p className="text-emerald-500/70">~ $ ./get_pricing</p>
-                <p className="text-emerald-100 flex items-start gap-3">
+                <p className="text-emerald-100 flex items-start gap-3 mb-10">
                   <CheckCircle2 className="text-emerald-400 shrink-0 w-5 h-5 mt-0.5" />
                   <span>
                     <strong className="text-emerald-300">
@@ -545,15 +536,11 @@ export default function AIInTheBoxHackathon() {
                   </div>
                 </div>
               </div>
-
-              <div className="pt-6">
-                <p className="text-emerald-400 animate-pulse">_</p>
-              </div>
             </div>
           </div>
 
           <div className="mt-12 flex justify-center">
-            <Link href="/register">
+            <Link href="https://www.universe.com/events/hackathon-ai-in-the-box-tickets-TQ2YC7">
               <button className="px-8 py-4 rounded-full border border-emerald-500 text-emerald-400 font-mono uppercase tracking-widest hover:bg-emerald-500 hover:text-emerald-950 transition-colors duration-300">
                 Execute Registration
               </button>
@@ -571,7 +558,10 @@ export default function AIInTheBoxHackathon() {
             Headline Sponsor
           </p>
 
-          <div className="group relative p-1 rounded-2xl bg-linear-to-b from-emerald-500/40 to-transparent transition-all duration-500 hover:from-emerald-400/60 mx-auto max-w-2xl cursor-pointer">
+          <div
+            id="sponsors"
+            className="group relative p-1 rounded-2xl bg-linear-to-b from-emerald-500/40 to-transparent transition-all duration-500 hover:from-emerald-400/60 mx-auto max-w-2xl cursor-pointer"
+          >
             <div className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative bg-[#021c14] border border-emerald-900/50 rounded-xl p-12 md:p-20 flex flex-col items-center justify-center gap-6 overflow-hidden">
               <div className="absolute inset-0 opacity-5 bg-[linear-gradient(45deg,transparent_25%,rgba(52,211,153,1)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]" />
