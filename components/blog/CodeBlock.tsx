@@ -1,3 +1,5 @@
+"use client";
+
 import { isValidElement, useState } from "react";
 import { CopyButton } from "./CopyButton";
 
