@@ -137,7 +137,9 @@
   gap: 6px;
   padding: 10px;
   border-radius: 10px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
   background-color: rgba(255, 255, 255, 0.06);
   cursor: pointer;
   user-select: none;
@@ -149,7 +151,10 @@
   background: #ffffff;
   display: block;
   border-radius: 999px;
-  transition: transform 0.25s ease, opacity 0.2s ease, width 0.2s ease;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease,
+    width 0.2s ease;
 }
 
 /* Animate hamburger into an "X" when checked */
@@ -175,7 +180,9 @@
   /* start hidden */
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.25s ease;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease;
 }
 
 /* Dropdown panel styling */
@@ -199,7 +206,9 @@
   font-size: 1rem;
   border-radius: 10px;
   text-decoration: none;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
   position: relative;
 }
 .mobile-link:hover {
@@ -291,9 +300,11 @@
      1) Base mask covers the whole element (border-box) so borders can render.
      2) Narrow vertical strip to subtract to create the gap.
   */
-  -webkit-mask: linear-gradient(#000 0 0) border-box,
+  -webkit-mask:
+    linear-gradient(#000 0 0) border-box,
     linear-gradient(#000 0 0) border-box;
-  mask: linear-gradient(#000 0 0) border-box,
+  mask:
+    linear-gradient(#000 0 0) border-box,
     linear-gradient(#000 0 0) border-box;
 
   /* Subtract second mask from the first */
@@ -301,11 +312,19 @@
   mask-composite: exclude; /* Spec/Chromium/Firefox */
 
   /* Position the subtracting strip at the bottom */
-  -webkit-mask-position: 0 0, calc(50% + 32px) bottom; /* 32 is the half of tail's width */
-  mask-position: 0 0, calc(50% + 32px) bottom;
+  -webkit-mask-position:
+    0 0,
+    calc(50% + 32px) bottom; /* 32 is the half of tail's width */
+  mask-position:
+    0 0,
+    calc(50% + 32px) bottom;
 
-  -webkit-mask-size: 100% 100%, var(--gap-height) var(--gap-width);
-  mask-size: 100% 100%, var(--gap-height) var(--gap-width);
+  -webkit-mask-size:
+    100% 100%,
+    var(--gap-height) var(--gap-width);
+  mask-size:
+    100% 100%,
+    var(--gap-height) var(--gap-width);
 
   -webkit-mask-repeat: no-repeat, no-repeat;
   mask-repeat: no-repeat, no-repeat;
@@ -314,11 +333,19 @@
 @media (min-width: 64rem) {
   .border-gap {
     /* Position the subtracting strip on the right */
-    -webkit-mask-position: 0 0, calc(100% + 1px) var(--gap-start);
-    mask-position: 0 0, calc(100% + 1px) var(--gap-start);
+    -webkit-mask-position:
+      0 0,
+      calc(100% + 1px) var(--gap-start);
+    mask-position:
+      0 0,
+      calc(100% + 1px) var(--gap-start);
 
-    -webkit-mask-size: 100% 100%, var(--gap-width) var(--gap-height);
-    mask-size: 100% 100%, var(--gap-width) var(--gap-height);
+    -webkit-mask-size:
+      100% 100%,
+      var(--gap-width) var(--gap-height);
+    mask-size:
+      100% 100%,
+      var(--gap-width) var(--gap-height);
   }
 }
 
@@ -472,4 +499,12 @@
   .hero-glow {
     transition: none !important;
   }
+}
+
+code:not(pre code) {
+  @apply rounded bg-white/10 px-1 py-0.5 font-mono text-[0.95em] text-gray-100;
+}
+
+a {
+  @apply text-[#eb5b6c] hover:text-white transition-colors;
 }
