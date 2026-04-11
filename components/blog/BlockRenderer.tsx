@@ -22,7 +22,7 @@ const ComponentMap: Record<string, React.ElementType> = {
 // Types for the JSONB payload
 export type Block = {
   type: string;
-  props?: Record<string, any>;
+  props?: Record<string, unknown>;
   children?: Block[];
   content?: string;
 };
@@ -50,8 +50,11 @@ export function BlockRenderer({ blocks }: { blocks: Block[] }) {
       );
     }
 
-    if (block.type === "List" && block.props?.items) {
-      const itemsNodes = block.props.items.map((rawHtml: string, i: number) => {
+    if (block.type === "List" && Array.isArray(block.props?.items)) {
+      // Explicitly tell TypeScript this is an array of strings
+      const listItems = block.props.items as string[];
+
+      const itemsNodes = listItems.map((rawHtml: string, i: number) => {
         const cleanHtml = sanitizeHtml(rawHtml, sanitizeOptions);
         return <span key={i} dangerouslySetInnerHTML={{ __html: cleanHtml }} />;
       });
