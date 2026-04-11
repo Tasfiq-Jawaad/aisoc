@@ -33,7 +33,7 @@ export default function LandingWireframeNeon() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Chat here...(Coming soon)"
+                  placeholder="Chat here...(Under maintenance, will be available within 24h)"
                   aria-label="Chat here"
                   className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-gray-100 placeholder-gray-400 outline-none transition focus:[border-color:#eb5b6c99] focus:ring-2 focus:[--ring-color:#eb5b6c33] focus:[box-shadow:0_0_0_3px_var(--ring-color)]"
                 />
