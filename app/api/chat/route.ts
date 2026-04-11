@@ -13,11 +13,11 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
 
-    const executeTool = async (name: string, args: any) => {
+    const executeTool = async (name: string, args: Record<string, unknown>) => {
       if (name === "getUpcomingEvents") return await getUpcomingEvents();
       if (name === "getPastEvents") return await getPastEvents();
       if (name === "getAllBlogs") return await getAllBlogPosts();
-      if (name === "getBlogBySlug") return await getBlogPostBySlug(args.slug);
+      if (name === "getBlogBySlug") return await getBlogPostBySlug(args.slug as string);
       return { result: "No results found." };
     };
 
@@ -62,12 +62,20 @@ export async function POST(req: Request) {
       }
     ];
 
-    let conversation = [
+    interface OpenRouterMessage {
+      role: string;
+      content?: string | null;
+      tool_calls?: Array<{ id: string; type: string; function: { name: string; arguments: string } }>;
+      tool_call_id?: string;
+      name?: string;
+    }
+
+    const conversation: OpenRouterMessage[] = [
       {
         role: "system",
         content: systemPrompt
       },
-      ...messages.map((m: any) => ({
+      ...messages.map((m: { role: string; content: string }) => ({
         role: m.role === "user" ? "user" : "assistant",
         content: m.content
       }))
@@ -109,14 +117,15 @@ export async function POST(req: Request) {
             tool_call_id: call.id,
             name: call.function.name,
             content: JSON.stringify({ result: reqData })
-          } as any);
-        } catch (e: any) {
+          });
+        } catch (e: unknown) {
+          const errorMessage = e instanceof Error ? e.message : String(e);
           conversation.push({
             role: "tool",
             tool_call_id: call.id,
             name: call.function.name,
-            content: JSON.stringify({ error: e.message })
-          } as any);
+            content: JSON.stringify({ error: errorMessage })
+          });
         }
       }
 
@@ -142,8 +151,9 @@ export async function POST(req: Request) {
 
     return Response.json({ text: messageObj.content });
 
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(err);
-    return Response.json({ error: err.message }, { status: 500 });
+    const errorMessage = err instanceof Error ? err.message : "An unknown error occurred";
+    return Response.json({ error: errorMessage }, { status: 500 });
   }
 }
