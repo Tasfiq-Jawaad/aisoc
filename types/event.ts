@@ -5,8 +5,8 @@ export interface Event {
   created_at: string; // timestamptz
   slug: string; // for url
   title: string;
-  start_date: string | null; // timestamp (without tz)
-  end_date: string | null; // timestamp (without tz)
+  start_date: string | null; // timestamptz
+  end_date: string | null; // timestamptz
   is_active: boolean | true;
   location: string | null;
   map_url: string | null;
