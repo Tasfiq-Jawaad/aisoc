@@ -5,8 +5,9 @@ export const maxDuration = 30;
 
 const openRouterKey = process.env.OPENROUTER_API_KEY || "";
 
-
 const model = process.env.MODEL || "google/gemini-2.0-flash-001";
+
+const systemPrompt = process.env.SYSTEM_PROMPT || "";
 
 export async function POST(req: Request) {
   try {
@@ -64,7 +65,7 @@ export async function POST(req: Request) {
     let conversation = [
       {
         role: "system",
-        content: "You are MicroChip, a friendly mascot of the Leeds Artificial Intelligence Society. Be enthusiastic and always introduce yourself to new users. Answer queries about the society or general AI topics. Be concise and use markdown formatting where appropriate. Provide the source or reference titles if useful."
+        content: systemPrompt
       },
       ...messages.map((m: any) => ({
         role: m.role === "user" ? "user" : "assistant",
