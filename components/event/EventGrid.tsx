@@ -8,7 +8,7 @@ export default function EventGrid({
 }: {
   events: Event[];
   emptyText: string;
-  isPast: boolean;
+  isPast?: boolean;
 }) {
   if (!events?.length) {
     return <p className="text-gray-500 text-sm md:text-base">{emptyText}</p>;

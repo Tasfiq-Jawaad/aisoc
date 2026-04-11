@@ -1,9 +1,10 @@
+import EventGrid from "@/components/event/EventGrid";
+import { getUpcomingEvents } from "@/lib/actions/event";
 import Image from "next/image";
 import Link from "next/link";
-import { EventItem } from "./events/page";
 
-export default function LandingWireframeNeon() {
-  const upcomingEvent = [] as EventItem[];
+export default async function LandingWireframeNeon() {
+  const upcomingEvent = await getUpcomingEvents();
 
   return (
     <main className="p-2 xxs:p-4 overflow-x-clip overflow-y-visible">
@@ -130,105 +131,7 @@ export default function LandingWireframeNeon() {
           </Link>
         </div>
 
-        {upcomingEvent.length ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {upcomingEvent.map((e, i) => (
-              <article
-                key={i}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5"
-              >
-                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10" />
-                <div className="pointer-events-none  absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-b from-transparent via-[color:#eb5b6c1a] to-[color:#eb5b6c1a]" />
-                <div className="relative h-40 md:h-44 w-full overflow-hidden">
-                  <Image
-                    src={e.image}
-                    alt={e.title}
-                    fill
-                    className="object-contain scale-105 transition-transform duration-500 group-hover:scale-110"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                  <div className="absolute left-3 top-3">
-                    <span className="inline-flex items-center rounded-full [background:#eb5b6c1a] [color:#ff909c] [border-color:#eb5b6c4d] border px-3 py-1 text-xs font-semibold backdrop-blur">
-                      {e.badge}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 md:p-5">
-                  <h4 className="text-white font-bold text-lg md:text-xl tracking-tight">
-                    {e.title}
-                  </h4>
-                  <div className="mt-3 flex flex-col gap-1 text-sm text-gray-300">
-                    <div className="flex items-center gap-2">
-                      <span className="inline-block h-1.5 w-1.5 rounded-full [background:#eb5b6c]" />
-                      <span>
-                        {new Date(e.date).toLocaleDateString(undefined, {
-                          weekday: "short",
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        })}
-                      </span>
-                      <span className="text-gray-500">•</span>
-                      <span>{e.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className="opacity-80"
-                        aria-hidden
-                      >
-                        <path
-                          d="M12 2C7.03 2 3 6.03 3 11c0 6.08 8.28 11 9 11 .72 0 9-4.92 9-11 0-4.97-4.03-9-9-9zM12 13.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 8.5 12 8.5s2.5 1.12 2.5 2.5S13.38 13.5 12 13.5z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                      <span>{e.location}</span>
-                    </div>
-                  </div>
-
-                  {/* todo: issue 3 and 4 */}
-                  <div className="mt-4 flex items-center justify-between">
-                    {e?.url ? (
-                      <Link
-                        href={e.url}
-                        className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
-                      >
-                        Details <span aria-hidden>→</span>
-                      </Link>
-                    ) : (
-                      <p className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2">
-                        More details soon
-                      </p>
-                    )}
-
-                    {e?.blog_url && (
-                      <Link
-                        href={e?.blog_url}
-                        className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
-                      >
-                        Blog <span aria-hidden>→</span>
-                      </Link>
-                    )}
-
-                    {/* <Link
-                    href="#"
-                    className="rounded-lg border [border-color:#eb5b6c66] [background:#eb5b6c1a] [color:#ff909c] hover:[background:#eb5b6c33] px-3 py-1.5 text-sm transition"
-                  >
-                    RSVP
-                  </Link> */}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-500 text-sm md:text-base">
-            No upcoming events
-          </p>
-        )}
+        <EventGrid events={upcomingEvent} emptyText="No upcoming events" />
 
         <div className="mt-10 md:mt-12 relative">
           <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />

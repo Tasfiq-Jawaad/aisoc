@@ -133,7 +133,7 @@ export const EventCard = ({
               href={event?.note_url}
               className="[color:#eb5b6c] hover:text-white text-sm font-medium inline-flex items-center gap-2"
             >
-              Blog <span aria-hidden>→</span>
+              Notes <span aria-hidden>→</span>
             </Link>
           )}
           {/* todo: rsvp option */}
