@@ -13,6 +13,10 @@ export default function RootLayout({
       url: "",
     },
     {
+      displayName: "Blog",
+      url: "blog",
+    },
+    {
       displayName: "Committee",
       url: "committee",
     },

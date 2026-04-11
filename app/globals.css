@@ -121,6 +121,10 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  a {
+    @apply text-[#eb5b6c] hover:text-white transition-colors;
+  }
 }
 
 /* Hide the actual checkbox */
@@ -503,8 +507,4 @@
 
 code:not(pre code) {
   @apply rounded bg-white/10 px-1 py-0.5 font-mono text-[0.95em] text-gray-100;
-}
-
-a {
-  @apply text-[#eb5b6c] hover:text-white transition-colors;
 }
