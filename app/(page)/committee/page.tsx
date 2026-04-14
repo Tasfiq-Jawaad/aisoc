@@ -1,45 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type Member = {
-  name: string;
-  role: string;
-  email: string;
-  image: string;
-};
-
-const committee: Member[] = [
-  {
-    name: "Mohammad Tasfiq Jawaad",
-    role: "President",
-    email: "sc23mtj@leeds.ac.uk",
-    image: "/mascot.svg",
-  },
-  {
-    name: "Mustafa Syed",
-    role: "Secretary",
-    email: "sc22ms@leeds.ac.uk",
-    image: "/mascot.svg",
-  },
-  {
-    name: "George Baker",
-    role: "Treasurer",
-    email: "G.W.Baker@leeds.ac.uk",
-    image: "/mascot.svg",
-  },
-  {
-    name: "Omar Choudhry",
-    role: "Chair",
-    email: "O.Choudhry@leeds.ac.uk",
-    image: "/mascot.svg",
-  },
-  {
-    name: "Mohammed Butt",
-    role: "EPS Outreach Officer",
-    email: "mn22mrb@leeds.ac.uk",
-    image: "/mascot.svg",
-  },
-];
+import { committee } from "@/lib/data/committee";
 
 export const metadata = {
   title: "Committee | Artificial Intelligence Society",
@@ -94,7 +56,7 @@ export default function CommitteePage() {
                 {m.name}
               </h2>
 
-              <div className="mt-2 text-gray-300 text-sm">
+              <div className="mt-4 text-gray-300 text-sm">
                 <div className="flex items-center gap-2">
                   <svg
                     width="14"

@@ -1,5 +1,6 @@
 import { getUpcomingEvents, getPastEvents } from "@/lib/actions/event";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/actions/blog";
+import { committee, generalContactEmail } from "@/lib/data/committee";
 
 export const maxDuration = 30;
 
@@ -18,6 +19,7 @@ export async function POST(req: Request) {
       if (name === "getPastEvents") return await getPastEvents();
       if (name === "getAllBlogs") return await getAllBlogPosts();
       if (name === "getBlogBySlug") return await getBlogPostBySlug(args.slug as string);
+      if (name === "getCommitteeInfo") return { contactEmail: generalContactEmail, committee };
       return { result: "No results found." };
     };
 
@@ -58,6 +60,14 @@ export async function POST(req: Request) {
             },
             required: ["slug"]
           }
+        }
+      },
+      {
+        type: "function",
+        function: {
+          name: "getCommitteeInfo",
+          description: "Retrieve information about the society's committee members and general contact details.",
+          parameters: { type: "object", properties: {}, required: [] }
         }
       }
     ];
