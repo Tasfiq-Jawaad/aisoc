@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   ChevronRight,
   Code2,
-  Cpu,
   Globe,
   MapPin,
   Terminal,
@@ -14,6 +13,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -367,11 +367,18 @@ export default function AIInTheBoxHackathon() {
             </h2>
             <p className="text-lg md:text-2xl text-emerald-100/70 leading-relaxed">
               Unleash your creativity at Hackathon: AI in the Box. This
-              immersive 24-hour hackathon challenges you to design, build, and
-              showcase innovative artificial intelligence applications from the
-              ground up. Whether you are developing smart assistants, predictive
-              models, or generative AI tools, this is your opportunity to bring
-              your boldest ideas to life.
+              immersive 2 days hackathon challenges you to design, build, and
+              showcase innovative{" "}
+              <Link
+                className="text-emerald-400"
+                href={"https://browserpod.io/"}
+              >
+                sandboxed
+              </Link>{" "}
+              artificial intelligence applications from the ground up. Whether
+              you are developing smart assistants, predictive models, or
+              generative AI tools, this is your opportunity to bring your
+              boldest ideas to life.
             </p>
           </div>
 
@@ -382,9 +389,16 @@ export default function AIInTheBoxHackathon() {
                 Build Cutting-Edge AI projects
               </h3>
               <p className="text-emerald-100/60 text-sm leading-relaxed">
-                Create functional, AI-driven applications. Solve real-world
-                problems and demo a complete project built entirely from scratch
-                in just 24 hours.
+                Create functional, AI-driven sandboxed applications. We will
+                provide necessary API credit for{" "}
+                <Link
+                  className="text-emerald-400"
+                  href={"https://browserpod.io/"}
+                >
+                  BrowserPod
+                </Link>{" "}
+                sandbox. Solve real-world problems and demo a complete project
+                built entirely from scratch.
               </p>
             </div>
 
@@ -554,7 +568,7 @@ export default function AIInTheBoxHackathon() {
         <div
           className={`max-w-4xl mx-auto text-center reveal-base ${sponsorVisible ? "reveal-active" : ""}`}
         >
-          <p className="text-emerald-500/80 font-mono text-sm uppercase tracking-[0.3em] mb-8">
+          <p className="text-white font-bold text-lg md:text-4xl font-mono uppercase tracking-[0.3em] mb-8">
             Headline Sponsor
           </p>
 
@@ -565,12 +579,41 @@ export default function AIInTheBoxHackathon() {
             <div className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative bg-[#021c14] border border-emerald-900/50 rounded-xl p-12 md:p-20 flex flex-col items-center justify-center gap-6 overflow-hidden">
               <div className="absolute inset-0 opacity-5 bg-[linear-gradient(45deg,transparent_25%,rgba(52,211,153,1)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]" />
-              <Cpu className="text-emerald-400/50 w-12 h-12 mb-2 group-hover:scale-110 transition-transform duration-500" />
-              <h3 className="text-4xl md:text-6xl font-black text-white tracking-tight">
-                Leaning <br className="md:hidden" /> Technologies
+              <div className="w-full aspect-300/99 relative">
+                <Image src={"./leaningTech.svg"} alt="Leaning Tech logo" fill />
+              </div>
+              <p className="text-emerald-100/40 font-mono text-sm tracking-widest uppercase mt-4">
+                Browser-based computer infrastructure for the AI era
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section ref={sponsorRef} className="py-24 px-4 relative overflow-hidden">
+        <div
+          className={`max-w-4xl mx-auto text-center reveal-base ${sponsorVisible ? "reveal-active" : ""}`}
+        >
+          <p className="text-white font-bold text-lg md:text-4xl font-mono uppercase tracking-[0.3em] mb-8">
+            Technology partner
+          </p>
+
+          <div
+            id="sponsors"
+            className="group relative p-1 rounded-2xl bg-linear-to-b from-emerald-500/40 to-transparent transition-all duration-500 hover:from-emerald-400/60 mx-auto max-w-2xl cursor-pointer"
+          >
+            <div className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative bg-[#021c14] border border-emerald-900/50 rounded-xl p-12 md:p-20 flex flex-col items-center justify-center gap-6 overflow-hidden">
+              <div className="absolute inset-0 opacity-5 bg-[linear-gradient(45deg,transparent_25%,rgba(52,211,153,1)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]" />
+              <div className="w-[50%] aspect-2000/2199 relative">
+                <Image src={"/browserpod.png"} alt="Leaning Tech logo" fill />
+              </div>
+
+              <h3 className="text-4xl font-black text-white tracking-tight">
+                BrowserPod
               </h3>
               <p className="text-emerald-100/40 font-mono text-sm tracking-widest uppercase mt-4">
-                Powering the next generation
+                Run AI code securely on any device
               </p>
             </div>
           </div>
