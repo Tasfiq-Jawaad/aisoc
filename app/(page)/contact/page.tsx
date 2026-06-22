@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+import { Button } from "@/components/ui/Button";
+import { Divider } from "@/components/ui/Divider";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+
 export const metadata = {
   title: "Contact us | Artificial Intelligence Society",
   description:
@@ -10,17 +14,12 @@ export default function ContactPage() {
   return (
     <main className="mx-auto w-full max-w-7xl px-3 sm:px-4 py-8 md:py-12">
       {/* Header */}
-      <section className="relative mb-8 md:mb-12">
-        <div className="pointer-events-none absolute -top-8 -left-8 h-40 w-40 rounded-full [background:#eb5b6c22] blur-[72px]" />
-        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-          Contact us
-        </h1>
-        <p className="mt-3 text-gray-400 text-base md:text-lg max-w-2xl">
-          We’d love to hear from you—whether it’s about events, sponsorship,
-          workshops, collaborations, or general questions.
-        </p>
-        <div className="mt-3 h-1 w-24 rounded-full [background:#eb5b6c99]" />
-      </section>
+      <SectionHeading
+        level="page"
+        glow
+        title="Contact us"
+        description="We’d love to hear from you—whether it’s about events, sponsorship, workshops, collaborations, or general questions."
+      />
 
       {/* Key contacts */}
       <section
@@ -41,10 +40,10 @@ export default function ContactPage() {
               <div className="min-w-0">
                 <div className="text-gray-500">Email</div>
                 <a
-                  href="mailto:committee@leedsaisoc.co.uk"
+                  href="mailto:aisociety@leeds.ac.uk"
                   className="text-white hover:opacity-90 transition break-words"
                 >
-                  committee@leedsaisoc.co.uk
+                  aisociety@leeds.ac.uk
                 </a>
               </div>
             </li>
@@ -135,28 +134,27 @@ export default function ContactPage() {
             <p className="text-xs sm:text-sm text-gray-400">
               Prefer email? Reach us at{" "}
               <a
-                href="mailto:committee@leedsaisoc.co.uk"
+                href="mailto:aisociety@leeds.ac.uk"
                 className="text-white hover:opacity-90"
               >
-                committee@leedsaisoc.co.uk
+                aisociety@leeds.ac.uk
               </a>
               .
             </p>
-            <Link
+            <Button
               href="/events"
-              className="hidden sm:inline-flex items-center rounded-lg border [border-color:#eb5b6c66] [background:#eb5b6c1a] [color:#ff909c] hover:[background:#eb5b6c33] px-3 py-1.5 text-xs font-medium transition"
+              variant="ghost"
+              size="sm"
+              className="hidden sm:inline-flex text-xs font-medium"
             >
               See events
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Divider */}
-      <div className="my-10 md:my-12 relative">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-0.5 w-24 [background:#eb5b6c80] blur-sm" />
-      </div>
+      <Divider className="my-10 md:my-12" />
 
       {/* todo: Contact form issue 6 */}
       {/* <section className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">

@@ -1,4 +1,5 @@
 import { BlockRenderer } from "@/components/blog/BlockRenderer";
+import { GlowBlob } from "@/components/ui/GlowBlob";
 import { getBlogPostBySlug } from "@/lib/actions/blog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -28,7 +29,7 @@ export default async function BlogPostPage({
     <main className="mx-auto w-full max-w-7xl px-3 sm:px-4 py-8 md:py-12">
       {/* Page header */}
       <section className="relative mb-8 md:mb-12">
-        <div className="pointer-events-none absolute -top-8 -left-8 h-40 w-40 rounded-full [background:#eb5b6c22] blur-[72px]" />
+        <GlowBlob />
 
         <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
           {post.title}

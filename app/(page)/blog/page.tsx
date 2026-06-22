@@ -1,3 +1,4 @@
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { getAllBlogPosts } from "@/lib/actions/blog";
 import Link from "next/link";
 
@@ -12,20 +13,13 @@ export default async function BlogIndexPage() {
   return (
     <main className="mx-auto w-full max-w-7xl px-3 sm:px-4 py-8 md:py-12">
       {/* Page header */}
-      <section className="relative mb-12 md:mb-16">
-        <div className="pointer-events-none absolute -top-8 -left-8 h-40 w-40 rounded-full [background:#eb5b6c22] blur-[72px]" />
-
-        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-          Our Blog
-        </h1>
-
-        <p className="mt-3 text-gray-400 text-base md:text-lg max-w-2xl">
-          Explore our latest guides, tutorials, and thoughts on artificial
-          intelligence, built for the community.
-        </p>
-
-        <div className="mt-5 h-1 w-24 rounded-full [background:#eb5b6c99]" />
-      </section>
+      <SectionHeading
+        level="page"
+        glow
+        className="mb-12 md:mb-16"
+        title="Our Blog"
+        description="Explore our latest guides, tutorials, and thoughts on artificial intelligence, built for the community."
+      />
 
       {/* Blog posts grid */}
       {posts.length === 0 ? (

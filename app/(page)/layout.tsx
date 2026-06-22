@@ -2,6 +2,8 @@ import { Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/Button";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,6 +33,10 @@ export default function RootLayout({
     {
       displayName: "Contact",
       url: "contact",
+    },
+    {
+      displayName: "Sponsor us",
+      url: "sponsor",
     },
     {
       displayName: "<hack_ai_thon>",
@@ -211,6 +217,14 @@ export default function RootLayout({
                       Committee
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/sponsor"
+                      className="hover:text-white transition"
+                    >
+                      Sponsor us
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
@@ -224,10 +238,10 @@ export default function RootLayout({
                 <ul className="mt-3 space-y-2 text-gray-400 text-sm sm:text-base">
                   <li>
                     <Link
-                      href="mailto:committee@leedsaisoc.co.uk"
+                      href="mailto:aisociety@leeds.ac.uk"
                       className="hover:text-white transition"
                     >
-                      committee@leedsaisoc.co.uk
+                      aisociety@leeds.ac.uk
                     </Link>
                   </li>
                   <li>
@@ -275,12 +289,9 @@ export default function RootLayout({
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/5" />
                   </div>
-                  <button
-                    type="submit"
-                    className="rounded-xl [background:#eb5b6c] hover:[background:#ff6b7b] text-black font-semibold px-4 py-3 text-sm sm:text-base transition"
-                  >
+                  <Button type="submit" className="px-4 py-3 text-sm sm:text-base">
                     Subscribe
-                  </button>
+                  </Button>
                 </form>
               </div>
             </div>

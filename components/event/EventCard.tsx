@@ -1,3 +1,4 @@
+import { Pill } from "@/components/ui/Pill";
 import { Event } from "@/types/event";
 import { getEventSchedule } from "@/utils/helper/timestamp";
 import Image from "next/image";
@@ -42,20 +43,15 @@ export const EventCard = ({
           />
         )}
         <div className="absolute left-3 top-3">
-          <span
-            className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold backdrop-blur border ${
-              isPast
-                ? "bg-white/5 text-gray-300 border-white/20"
-                : "[background:#eb5b6c1a] [color:#ff909c] [border-color:#eb5b6c4d]"
-            }`}
-          >
-            {event.badge}
-          </span>
+          <Pill variant={isPast ? "neutral" : "accent"}>{event.badge}</Pill>
         </div>
         {isPast && (
-          <span className="absolute right-3 top-3 inline-flex items-center rounded-full bg-white/5 text-gray-300 border border-white/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide">
+          <Pill
+            variant="neutral"
+            className="absolute right-3 top-3 px-2 py-0.5 text-[10px] uppercase tracking-wide"
+          >
             Past
-          </span>
+          </Pill>
         )}
       </div>
 

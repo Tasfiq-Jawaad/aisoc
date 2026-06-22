@@ -3,6 +3,8 @@
 import Link from "next/link";
 import React, { isValidElement, useState } from "react";
 
+import { GlowBlob } from "@/components/ui/GlowBlob";
+
 const Section = ({
   title,
   subtitle,
@@ -211,7 +213,7 @@ export default function page() {
   return (
     <main className="mx-auto w-full max-w-7xl px-3 sm:px-4 py-8 md:py-12">
       <section className="relative mb-8 md:mb-12">
-        <div className="pointer-events-none absolute -top-8 -left-8 h-40 w-40 rounded-full [background:#eb5b6c22] blur-[72px]" />
+        <GlowBlob />
         <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
           Talk to the Future II: Make an AI chatbot with local AI
         </h1>
